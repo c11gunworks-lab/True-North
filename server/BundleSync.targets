@@ -1,0 +1,138 @@
+<Project>
+  <!--
+    BundleSync: makes bundles.json and every item's Prefab path agree with the
+    bundle files that actually exist on disk.
+
+    1. Every "key" in bundles.json (your own bundles) is checked against
+       Resources\bundles. If the file name exists in exactly one place, the key
+       is rewritten to that folder path. dependencyKeys are not touched: they
+       point at the game's own "assets/..." bundles.
+    2. Every  "path": "....bundle"  in Resources\db\**\*.json is then checked
+       against the bundles.json keys the same way and rewritten to match.
+       Paths starting with "assets/" are base-game prefabs and are skipped.
+
+    Matching is by file name, so wrong folders, backslashes and wrong
+    capitalisation are all corrected. A name that doesn't exist, or that exists
+    in more than one folder, fails the build and says which file it's in.
+    Source files are only rewritten when something actually changes; line
+    endings, BOM and formatting are left alone.
+  -->
+  <UsingTask TaskName="SyncBundlePaths"
+             TaskFactory="RoslynCodeTaskFactory"
+             AssemblyFile="$(MSBuildToolsPath)\Microsoft.Build.Tasks.Core.dll">
+    <ParameterGroup>
+      <BundleManifest ParameterType="System.String" Required="true" />
+      <BundleDir ParameterType="System.String" Required="true" />
+      <DbJsonFiles ParameterType="Microsoft.Build.Framework.ITaskItem[]" Required="true" />
+    </ParameterGroup>
+    <Task>
+      <Using Namespace="System" />
+      <Using Namespace="System.Collections.Generic" />
+      <Using Namespace="System.IO" />
+      <Using Namespace="System.Linq" />
+      <Using Namespace="System.Text" />
+      <Using Namespace="System.Text.RegularExpressions" />
+      <Using Namespace="Microsoft.Build.Framework" />
+      <Code Type="Fragment" Language="cs"><![CDATA[
+        // JSON text stores a backslash as two characters, so collapse those first.
+        Func<string, string> norm = p => p.Replace("\\\\", "/").Replace('\\', '/').Trim();
+
+        if (!Directory.Exists(BundleDir)) { Log.LogError("[BundleSync] Bundle folder not found: " + BundleDir); return false; }
+        if (!File.Exists(BundleManifest)) { Log.LogError("[BundleSync] bundles.json not found: " + BundleManifest); return false; }
+
+        var bundleRoot = Path.GetFullPath(BundleDir).TrimEnd('\\', '/');
+        // Path relative to the bundles folder, e.g. "un_master/furniture/ctrunblack.bundle"
+        var onDisk = Directory.GetFiles(bundleRoot, "*.bundle", SearchOption.AllDirectories)
+            .Select(f => norm(f.Substring(bundleRoot.Length).TrimStart('\\', '/')))
+            .ToList();
+
+        // Rewrites every regex match whose captured group is a bundle path, resolving it
+        // against the candidate list. Returns the new text and how many values changed.
+        Func<string, Regex, int, List<string>, string, Func<string, bool>, Tuple<string, int>> fix =
+            (text, rx, group, candidates, label, skip) =>
+        {
+            var exact = new HashSet<string>(candidates, StringComparer.Ordinal);
+            var byName = candidates
+                .GroupBy(c => Path.GetFileName(c), StringComparer.OrdinalIgnoreCase)
+                .ToDictionary(x => x.Key, x => x.ToList(), StringComparer.OrdinalIgnoreCase);
+            int changes = 0;
+
+            string result = rx.Replace(text, m =>
+            {
+                var g = m.Groups[group];
+                string val = g.Value;
+                string resolved = norm(val);
+                if (skip(resolved)) return m.Value;
+
+                if (!exact.Contains(resolved))
+                {
+                    List<string> hits;
+                    if (!byName.TryGetValue(Path.GetFileName(resolved), out hits))
+                    {
+                        Log.LogError("[BundleSync] " + label + ": '" + val + "' does not match any bundle.");
+                        return m.Value;
+                    }
+                    if (hits.Count > 1)
+                    {
+                        Log.LogError("[BundleSync] " + label + ": '" + val + "' is ambiguous, found in: " + string.Join(", ", hits));
+                        return m.Value;
+                    }
+                    resolved = hits[0];
+                }
+
+                if (resolved == val) return m.Value;
+
+                changes++;
+                Log.LogMessage(MessageImportance.High, "[BundleSync] " + label + ": '" + val + "' -> '" + resolved + "'");
+                int start = g.Index - m.Index;
+                return m.Value.Substring(0, start) + resolved + m.Value.Substring(start + g.Length);
+            });
+
+            return Tuple.Create(result, changes);
+        };
+
+        // Writes only if changed, keeping the original BOM state.
+        Action<string, string> save = (file, text) =>
+        {
+            var bytes = File.ReadAllBytes(file);
+            bool bom = bytes.Length >= 3 && bytes[0] == 0xEF && bytes[1] == 0xBB && bytes[2] == 0xBF;
+            File.WriteAllText(file, text, new UTF8Encoding(bom));
+        };
+
+        // ── 1. bundles.json against the files on disk ─────────────────────────
+        string manifest = File.ReadAllText(BundleManifest);
+        var keyEntry = new Regex("(\"key\"\\s*:\\s*\")([^\"]+?\\.bundle)(\")", RegexOptions.IgnoreCase);
+        var manifestFix = fix(manifest, keyEntry, 2, onDisk, "bundles.json", _ => false);
+        if (manifestFix.Item2 > 0) save(BundleManifest, manifestFix.Item1);
+
+        var keys = new Regex("\"key\"\\s*:\\s*\"([^\"]+)\"")
+            .Matches(manifestFix.Item1).Cast<Match>()
+            .Select(m => norm(m.Groups[1].Value))
+            .ToList();
+
+        foreach (var dup in keys.GroupBy(k => k, StringComparer.OrdinalIgnoreCase).Where(x => x.Count() > 1))
+            Log.LogError("[BundleSync] bundles.json lists '" + dup.Key + "' more than once.");
+
+        foreach (var unlisted in onDisk.Except(keys, StringComparer.OrdinalIgnoreCase))
+            Log.LogWarning("[BundleSync] '" + unlisted + "' exists in bundles but is not in bundles.json, so it will never load.");
+
+        // ── 2. Item Prefab paths against bundles.json ────────────────────────
+        // Base-game prefabs live inside the game's own bundles, never in ours
+        Func<string, bool> isBaseGame = p => p.StartsWith("assets/", StringComparison.OrdinalIgnoreCase);
+        var prefabPath = new Regex("(\"path\"\\s*:\\s*\")([^\"]+?\\.bundle)(\")", RegexOptions.IgnoreCase);
+        int itemChanges = 0;
+        foreach (var item in DbJsonFiles)
+        {
+            string file = item.GetMetadata("FullPath");
+            string label = item.ItemSpec;
+            var r = fix(File.ReadAllText(file), prefabPath, 2, keys, label, isBaseGame);
+            if (r.Item2 > 0) { save(file, r.Item1); itemChanges += r.Item2; }
+        }
+
+        Log.LogMessage(MessageImportance.High,
+            "[BundleSync] " + keys.Count + " bundles registered, " + manifestFix.Item2 +
+            " bundles.json fix(es), " + itemChanges + " item path fix(es).");
+      ]]></Code>
+    </Task>
+  </UsingTask>
+</Project>

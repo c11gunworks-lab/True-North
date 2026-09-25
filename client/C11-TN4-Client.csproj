@@ -1,0 +1,124 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Core build settings -->
+  <PropertyGroup>
+    <!-- SPT's own 4.1 client modules target netstandard2.1 -->
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>C11_TN4_Client</RootNamespace>
+    <AssemblyName>C11-TN4-Client</AssemblyName>
+    <Optimize>true</Optimize>
+    <DebugType>portable</DebugType>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- Paths -->
+  <PropertyGroup>
+    <!-- Same property name as the server csproj, so one Directory.Build.props can set both.
+         Override on the command line with: dotnet build -c Release -p:SptDir=D:\SomewhereElse -->
+    <SptDir Condition="'$(SptDir)' == ''">C:\SPT4.1</SptDir>
+    <ManagedDir>$(SptDir)\EscapeFromTarkov_Data\Managed</ManagedDir>
+    <BepInExCore>$(SptDir)\BepInEx\core</BepInExCore>
+    <SptPluginsDir>$(SptDir)\BepInEx\plugins\spt</SptPluginsDir>
+    <PluginOutDir>$(SptDir)\BepInEx\plugins\C11-TN4-Client</PluginOutDir>
+    <MaskSourceDir>$(MSBuildProjectDirectory)\masks</MaskSourceDir>
+
+    <!-- Shared with the server: one version for both halves of the mod -->
+    <VersionFile>$(MSBuildProjectDirectory)\..\server\version.txt</VersionFile>
+    <PluginGuid>com.c11.tn4client</PluginGuid>
+    <PluginName>C11-TN4-Client</PluginName>
+  </PropertyGroup>
+  <!-- Bundles are shipped by the server mod, not this plugin. -->
+
+  <ItemGroup>
+    <Compile Remove="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+
+  <!-- References: all compile-only. Private=false stops them being copied into
+       the plugin folder, since the game and BepInEx already provide them. -->
+  <ItemGroup>
+    <Reference Include="0Harmony"       HintPath="$(BepInExCore)\0Harmony.dll"       Private="false" />
+    <Reference Include="BepInEx"        HintPath="$(BepInExCore)\BepInEx.dll"        Private="false" />
+    <Reference Include="spt-common"     HintPath="$(SptPluginsDir)\spt-common.dll"     Private="false" />
+    <Reference Include="spt-reflection" HintPath="$(SptPluginsDir)\spt-reflection.dll" Private="false" />
+
+    <Reference Include="Assembly-CSharp"        HintPath="$(ManagedDir)\Assembly-CSharp.dll"        Private="false" />
+    <Reference Include="AnimationSystem.Types"  HintPath="$(ManagedDir)\AnimationSystem.Types.dll"  Private="false" />
+    <Reference Include="Comfort"                HintPath="$(ManagedDir)\Comfort.dll"                Private="false" />
+    <!-- 4.1 split some item types (components, templates) out of Assembly-CSharp into these -->
+    <Reference Include="ItemComponent.Types"    HintPath="$(ManagedDir)\ItemComponent.Types.dll"    Private="false" />
+    <Reference Include="ItemTemplate.Types"     HintPath="$(ManagedDir)\ItemTemplate.Types.dll"     Private="false" />
+    <Reference Include="Comfort.Unity"          HintPath="$(ManagedDir)\Comfort.Unity.dll"          Private="false" />
+    <Reference Include="Newtonsoft.Json"        HintPath="$(ManagedDir)\Newtonsoft.Json.dll"        Private="false" />
+    <Reference Include="Sirenix.Serialization"  HintPath="$(ManagedDir)\Sirenix.Serialization.dll"  Private="false" />
+
+    <Reference Include="UnityEngine"                       HintPath="$(ManagedDir)\UnityEngine.dll"                       Private="false" />
+    <Reference Include="UnityEngine.CoreModule"            HintPath="$(ManagedDir)\UnityEngine.CoreModule.dll"            Private="false" />
+    <Reference Include="UnityEngine.AnimationModule"       HintPath="$(ManagedDir)\UnityEngine.AnimationModule.dll"       Private="false" />
+    <Reference Include="UnityEngine.AssetBundleModule"     HintPath="$(ManagedDir)\UnityEngine.AssetBundleModule.dll"     Private="false" />
+    <Reference Include="UnityEngine.IMGUIModule"           HintPath="$(ManagedDir)\UnityEngine.IMGUIModule.dll"           Private="false" />
+    <Reference Include="UnityEngine.ImageConversionModule" HintPath="$(ManagedDir)\UnityEngine.ImageConversionModule.dll" Private="false" />
+    <Reference Include="UnityEngine.InputLegacyModule"     HintPath="$(ManagedDir)\UnityEngine.InputLegacyModule.dll"     Private="false" />
+    <Reference Include="UnityEngine.PhysicsModule"         HintPath="$(ManagedDir)\UnityEngine.PhysicsModule.dll"         Private="false" />
+    <Reference Include="UnityEngine.TextRenderingModule"   HintPath="$(ManagedDir)\UnityEngine.TextRenderingModule.dll"   Private="false" />
+    <Reference Include="UnityEngine.UI"                    HintPath="$(ManagedDir)\UnityEngine.UI.dll"                    Private="false" />
+  </ItemGroup>
+
+  <!-- Version comes from the server's version.txt, read when the project loads (not during
+       the build), so the IDE and every build step see the same number. Read-only here:
+       only the server bumps the file. -->
+  <PropertyGroup Condition="Exists('$(VersionFile)')">
+    <Version>$([System.IO.File]::ReadAllText('$(VersionFile)').Trim())</Version>
+    <AssemblyVersion>$(Version)</AssemblyVersion>
+    <FileVersion>$(Version)</FileVersion>
+    <InformationalVersion>$(Version)</InformationalVersion>
+  </PropertyGroup>
+
+  <!-- Generates PluginConstants so [BepInPlugin] uses the same GUID/name/version.
+       Hooked to CoreCompile (like WTT's) so it also runs during the IDE's background
+       design-time build, which is what makes the symbol resolve in the editor. -->
+  <Target Name="GeneratePluginConstants" BeforeTargets="CoreCompile">
+    <Error Condition="!Exists('$(VersionFile)')" Text="Shared version file not found: $(VersionFile)" />
+    <ItemGroup>
+      <_PluginConstantsLine Include="namespace C11_TN4_Client" />
+      <_PluginConstantsLine Include="{" />
+      <_PluginConstantsLine Include="    internal static class PluginConstants" />
+      <_PluginConstantsLine Include="    {" />
+      <_PluginConstantsLine Include="        public const string Guid = &quot;$(PluginGuid)&quot;%3B" />
+      <_PluginConstantsLine Include="        public const string Name = &quot;$(PluginName)&quot;%3B" />
+      <_PluginConstantsLine Include="        public const string Version = &quot;$(Version)&quot;%3B" />
+      <_PluginConstantsLine Include="    }" />
+      <_PluginConstantsLine Include="}" />
+    </ItemGroup>
+    <WriteLinesToFile File="$(IntermediateOutputPath)PluginConstants.g.cs" Lines="@(_PluginConstantsLine)" Overwrite="true" WriteOnlyWhenDifferent="true" />
+    <ItemGroup>
+      <Compile Include="$(IntermediateOutputPath)PluginConstants.g.cs" />
+    </ItemGroup>
+    <Message Importance="high" Text="[Client] Building version $(Version)" />
+  </Target>
+
+  <!-- Fail loudly if the game install isn't where we expect, instead of a wall of missing-type errors -->
+  <Target Name="VerifyInstall" BeforeTargets="BeforeBuild">
+    <Error Condition="!Exists('$(ManagedDir)\Assembly-CSharp.dll')" Text="Assembly-CSharp.dll not found in $(ManagedDir). Is SptDir set correctly?" />
+    <Error Condition="!Exists('$(SptPluginsDir)\spt-reflection.dll')" Text="spt-reflection.dll not found in $(SptPluginsDir). Is SPT installed at $(SptDir)?" />
+  </Target>
+
+  <!-- Deploy: wipe the plugin folder, then copy the DLL and masks with folders intact.
+       Only runs after a successful build, so a broken build never removes a working plugin. -->
+  <Target Name="DeployPlugin" AfterTargets="Build">
+    <!-- File list lives inside the target so the IDE doesn't show every mask twice -->
+    <ItemGroup>
+      <MaskFiles Include="$(MaskSourceDir)\**\*" />
+    </ItemGroup>
+
+    <Message Importance="high" Text="[Deploy] $(PluginOutDir)" />
+    <RemoveDir Directories="$(PluginOutDir)" />
+    <MakeDir Directories="$(PluginOutDir)" />
+
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(PluginOutDir)" />
+    <Copy SourceFiles="@(MaskFiles)" DestinationFiles="@(MaskFiles->'$(PluginOutDir)\masks\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <Message Importance="high" Text="[Deploy] Done: @(MaskFiles->Count()) mask files." />
+  </Target>
+
+</Project>

@@ -1,0 +1,29 @@
+# Allowlist: only folders, .cs and .json files are tracked.
+# Bundles, binaries and IDE state stay out.
+
+# 1. ignore everything
+*
+
+# 2. but descend into directories — git will not look inside an ignored
+#    directory, so without this the rules below can never match
+!*/
+
+# 3. re-include what we want
+!*.cs
+!*.json
+!.gitignore
+!*.csproj
+!*.sln
+!.gitattributes
+!*.targets
+!version.txt
+!*.png
+!*.jpg
+!README.md
+!LICENSE
+
+# 4. generated trees, which hold .cs and .json of their own
+[Bb]in/
+[Oo]bj/
+.vs/
+.idea/

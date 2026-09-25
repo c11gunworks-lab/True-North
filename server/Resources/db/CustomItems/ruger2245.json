@@ -1,0 +1,780 @@
+{
+  "694c80fa9b0201378540f8bd": {
+    "itemTplToClone": "579204f224597773d619e051",
+    "parentId": "5447b5cf4bdc2d65278b4567",
+    "handbookParentId": "5b5f792486f77447ed5636b3",
+    "overrideProperties": {
+      "Weight": 0.25,
+      "BackgroundColor": "black",
+      "Width": 2,
+      "Height": 1,
+      "StackMaxSize": 1,
+      "Prefab": {
+        "path": "22lr/ruger2245.bundle",
+        "rcid": ""
+      },
+      "RepairCost": 210,
+      "RepairSpeed": 15,
+      "ExtraSizeLeft": 0,
+      "ExtraSizeRight": 0,
+      "ExtraSizeUp": 0,
+      "ExtraSizeDown": 0,
+      "ExtraSizeForceAdd": false,
+      "MergesWithChildren": true,
+      "CanSellOnRagfair": true,
+      "CanRequireOnRagfair": false,
+      "ConflictingItems": [
+        "69a9e0fb79fe0b0af4eee874",
+        "cd7948f6e0e8b48b2c4451c9",
+        "6a064937080ae01368ef9523"
+        
+      ],
+      "CanPutIntoDuringTheRaid": true,
+      "CantRemoveFromSlotsDuringRaid": [],
+      "weapClass": "pistol",
+      "weapUseType": "secondary",
+      "ammoCaliber": "Caliber22LR",
+      "Durability": 100,
+      "MaxDurability": 100,
+      "isFastReload": true,
+      "weapFireType": [
+        "single"
+      ],
+      "SingleFireRate": 650,
+      "CanQueueSecondShot": true,
+      "bFirerate": 30,
+      "Ergonomics": 78,
+      "RecoilForceUp": 25,
+      "RecoilForceBack": 29,
+      "RecoilCamera": 0.01,
+      "Convergence": 0.7,
+      "Velocity": 0,
+      "bEffDist": 75,
+      "bHearDist": 150,
+      "isChamberLoad": true,
+      "chamberAmmoCount": 1,
+      "isBoltCatch": true,
+      "defMagType": "694d4ff2984bc5d85740f8cc",
+      "defAmmo": "694c796b42ae52a1a940f8ba",
+      "Chambers": [
+        {
+          "_name": "patron_in_weapon",
+          "_id": "694c83108e7f4cfed940f8be",
+          "_mergeSlotWithChildren": false,
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "694c796b42ae52a1a940f8ba",
+                  "694efa39da82e820e540f8da",
+                  "694ef9c8bc499b141d40f8d7",
+                  "69504d179eec4a16c140f8df",
+                  "42fb193ffb1315101b1d0441",
+                  "2b6a06054693ed3fa9c47542",
+                  "b972903f30708cd41c8265ba",
+                  "e8e8cdc108d343708aa07b2d"
+                ]
+              }
+            ]
+          },
+          "_proto": "55d4af244bdc2d962f8b4571",
+          "_required": false
+        }
+      ],
+      "ReloadMode": "ExternalMagazine",
+      "CompactHandling": true,
+      "SightingRange": 0,
+      "MinRepairDegradation": 0,
+      "MaxRepairDegradation": 0.03,
+      "IronSightRange": 25,
+      "MustBoltBeOpennedForExternalReload": false,
+      "MustBoltBeOpennedForInternalReload": false,
+      "BoltAction": false,
+      "HipAccuracyRestorationDelay": 0.2,
+      "HipAccuracyRestorationSpeed": 7,
+      "HipInnaccuracyGain": 0.16,
+      "ManualBoltCatch": false,
+      "AimSensitivity": 0.65,
+      "BurstShotsCount": 3,
+      "BaseMalfunctionChance": 0.2277,
+      "AllowJam": true,
+      "AllowFeed": true,
+      "AllowMisfire": true,
+      "AllowSlide": true,
+      "DurabilityBurnRatio": 1.15,
+      "HeatFactorGun": 1,
+      "CoolFactorGun": 1.0,
+      "AllowOverheat": true,
+      "MinRepairKitDegradation": 0,
+      "MaxRepairKitDegradation": 0.025,
+      "Grids": [],
+      "Slots": [
+        {
+          "_id": "694c83aa3b371e596840f8bf",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_reciever.001",
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                 "694d4afc492b8a3abf40f8c5"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": true
+        },
+        {
+          "_id": "694d8609718246cc9340f8d4",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_reciever",
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "694d8611a9a00cec0d40f8d5"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": true
+        },
+        {
+          "_id": "694d4945589f77e34c40f8c4",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_muzzle",
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "69a9dfa0e55d527115eee872",
+                  "5b3a16655acfc40016387a2a",
+                  "5c7e5f112e221600106f4ede",
+                  "5c0fafb6d174af02a96260ba",
+                  "612e0cfc8004cc50514c2d9e",
+                  "5cf6937cd7f00c056c53fb39",
+                  "544a38634bdc2d58388b4568",
+                  "5cff9e5ed7ad1a09407397d4",
+                  "5c48a2a42e221602b66d1e07",
+                  "5f6372e2865db925d54f3869",
+                  "615d8e2f1cb55961fa0fd9a4",
+                  "56ea8180d2720bf2698b456a",
+                  "5d02676dd7ad1a049e54f6dc",
+                  "56ea6fafd2720b844b8b4593",
+                  "5943ee5a86f77413872d25ec",
+                  "609269c3b0e443224b421cc1",
+                  "5c7fb51d2e2216001219ce11",
+                  "5ea172e498dacb342978818e",
+                  "5c6d710d2e22165df16b81e7",
+                  "612e0e55a112697a4b3a66e7",
+                  "5d440625a4b9361eec4ae6c5",
+                  "5cc9b815d7f00c000e2579d6",
+                  "5a7c147ce899ef00150bd8b8",
+                  "5c7954d52e221600106f4cc7",
+                  "59bffc1f86f77435b128b872",
+                  "5a9fbb84a2750c00137fa685",
+                  "626667e87379c44d557b7550",
+                  "62669bccdb9ebb4daa44cd14",
+                  "626a74340be03179a165e30c",
+                  "6386120cd6baa055ad1e201c",
+                  "63ac5c9658d0485fc039f0b8",
+                  "6405ff6bd4578826ec3e377a",
+                  "64943b74e9998d641b0412ed",
+                  "6621455e3aceea9e2b0b01e7",
+                  "664301213dd83ddae20dda18",
+                  "694d576f3a480ae8db40f8d0"
+                  
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        },
+        {
+          "_id": "694c83cb7f72e9bfb240f8c1",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_magazine",
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "AnimationIndex": 0,
+                "Filter": [
+                  "694d4ff2984bc5d85740f8cc"
+                ]
+              }
+            ]
+          },
+          "_proto": "55d30c394bdc2dae468b4577",
+          "_required": false
+        },
+        {
+          "_id": "694c83f6d415662ebb40f8c2",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_pistolgrip",
+          "_parent": "694c80fa9b0201378540f8bd",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+"694d5067acb165798440f8cd",
+                  "694d7332a9f57254a140f8d2"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": true
+        }
+       
+      ]
+    },
+    "locales": {
+      "en": {
+        "name": "ruger 2245",
+        "shortName": "2245",
+        "description": "bang"
+      }
+    },
+    "fleaPriceRoubles": 10000,
+    "handbookPriceRoubles": 6500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694c843974f04af89d40f8c3": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 12,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  
+  "694d4afc492b8a3abf40f8c5": {
+    "itemTplToClone": "6374a822e629013b9c0645c8",
+    "parentId": "55818a304bdc2db5418b457d",
+    "handbookParentId": "5b5f764186f77447ec5d7714",
+    "overrideProperties": {
+      "Prefab": {
+        "path": "22lr/rugerupper.bundle",
+        "rcid": ""
+      },
+      "CanPutIntoDuringTheRaid": true,
+      "BackgroundColor": "blue",
+      "CanSellOnRagfair": true,
+      "CoolFactor": 1.004,
+      "Ergonomics": 3,
+      "HeatFactor": 0.96,
+      "Height": 1,
+      "MergesWithChildren": true,
+      "Recoil": -4,
+      "ToolModdable": true,
+      "Velocity": 0,
+      "Weight": 0.3,
+      "Width": 2,
+      "Grids": [],
+      "Slots": [
+       
+        {
+          "_id": "694d4e1c0eafc19a0840f8c6",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_scope.001",
+          "_parent": "694d4afc492b8a3abf40f8c5",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "5649a2464bdc2d91118b45a8",
+                  "57ac965c24597706be5f975c",
+                  "57aca93d2459771f2c7e26db",
+                  "544a3f024bdc2d1d388b4568",
+                  "544a3a774bdc2d3a388b4567",
+                  "5d2dc3e548f035404a1a4798",
+                  "57adff4f24597737f373b6e6",
+                  "626bb8532c923541184624b4",
+                  "591c4efa86f7741030027726",
+                  "570fd79bd2720bc7458b4583",
+                  "570fd6c2d2720bc6458b457f",
+                  "558022b54bdc2dac148b458d",
+                  "58491f3324597764bc48fa02",
+                  "584924ec24597768f12ae244",
+                  "5b30b0dc5acfc400153b7124",
+                  "6165ac8c290d254f5e6b2f6c",
+                  "60a23797a37c940de7062d02",
+                  "5d2da1e948f035477b1ce2ba",
+                  "5c0505e00db834001b735073",
+                  "609a63b6e2ff132951242d09",
+                  "59f9d81586f7744c7506ee62",
+                  "570fd721d2720bc5458b4596",
+                  "57ae0171245977343c27bfcf",
+                  "5d1b5e94d7ad1a2b865a96b0",
+                  "609bab8b455afd752b2e6138",
+                  "58d39d3d86f77445bb794ae7",
+                  "616554fe50224f204c1da2aa",
+                  "5c7d55f52e221644f31bff6a",
+                  "616584766ef05c2ce828ef57",
+                  "615d8d878004cc50514c3233",
+                  "577d128124597739d65d0e56",
+                  "58d2664f86f7747fec5834f6",
+                  "61714b2467085e45ef140b2c",
+                  "5b31163c5acfc400153b71cb",
+                  "5a33b652c4a28232996e407c",
+                  "5a33b2c9c4a282000c5a9511",
+                  "5a1ead28fcdbcb001912fa9f",
+                  "6477772ea8a38bb2050ed4db",
+                  "6478641c19d732620e045e17",
+                  "64785e7c19d732620e045e15",
+                  "65392f611406374f82152ba5",
+                  "653931da5db71d30ab1d6296",
+                  "655f13e0a246670fb0373245",
+                  "67641a851b2899700609901a"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        }
+      ]
+
+
+    },
+    "locales": {
+      "en": {
+        "name": "rugerslide",
+        "shortName": "rugerslide",
+        "description": "slide"
+      }
+    },
+    "fleaPriceRoubles": 6500,
+    "handbookPriceRoubles": 5500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d4eb0d50091010b40f8c7": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 6,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "694d4ff2984bc5d85740f8cc": {
+    "itemTplToClone": "670e8eab8c1bb0e5a7075acf",
+    "parentId": "5448bc234bdc2d3c308b4569",
+    "handbookParentId": "5b5f754a86f774094242f19b",
+    "overrideProperties": {
+      "Accuracy": 0,
+      "Prefab": {
+        "path": "22lr/ruger10rd.bundle",
+        "rcid": ""
+      },
+      "ExaminedByDefault": true,
+      "CanSellOnRagfair":true,
+      "AnimationVariantsNumber": 0,
+      "BackgroundColor": "blue",
+      "CanPutIntoDuringTheRaid": true,
+      "CanFast": true,
+      "CheckTimeModifier":-15,
+      "Cartridges": [
+        {
+          "_id": "694d4fec9d0be484e840f8cb",
+          "_max_count": 10,
+          "_name": "cartridges",
+          "_parent": "694d4ff2984bc5d85740f8cc",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "694c796b42ae52a1a940f8ba",
+                  "694efa39da82e820e540f8da",
+                  "694ef9c8bc499b141d40f8d7",
+                  "69504d179eec4a16c140f8df",
+                  "42fb193ffb1315101b1d0441",
+                  "2b6a06054693ed3fa9c47542",
+                  "b972903f30708cd41c8265ba",
+                  "e8e8cdc108d343708aa07b2d"
+                ]
+              }
+            ]
+          },
+          "_proto": "5748538b2459770af276a261"
+        }
+      ],
+
+      "Ergonomics": 1,
+      "Grids": [],
+      "Height": 1,
+      "LoadUnloadModifier": 5,
+      "MergesWithChildren": true,
+      "NotShownInSlot": false,
+      "MalfunctionChance": 0.05,
+      "Weight": 0.05,
+      "VisibleAmmoRangesString": "1-10",
+      "Width": 1
+    },
+    "locales": {
+      "en": {
+        "name": "2245mag",
+        "shortName": "2245mag",
+        "description": "bang"
+      }
+    },
+    "fleaPriceRoubles": 1700,
+    "handbookPriceRoubles": 1350,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d4f9189876571af40f8ca": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 2,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "694d5067acb165798440f8cd": {
+    "itemTplToClone": "6374a7e7417239a7bf00f042",
+    "parentId": "55818a684bdc2ddd698b456d",
+    "handbookParentId": "5b5f761f86f774094242f1a1",
+    "overrideProperties": {
+      "Prefab": {
+        "path": "22lr/rugerwoodgrip.bundle",
+        "rcid": ""
+      },
+      "Accuracy": 0,
+      "BackgroundColor": "blue",
+      "Ergonomics": 9,
+      "Height": 1,
+      "RaidModdable": false,
+      "Recoil": 0,
+      "Weight": 0.017,
+      "Width": 1,
+      "Grids": [],
+      "Slots": []
+    },
+    "locales": {
+      "en": {
+        "name": "rugerwoodgrip",
+        "shortName": "rugerwoodgrip",
+        "description": "rugerwoodgrip"
+      }
+    },
+    "fleaPriceRoubles": 7000,
+    "handbookPriceRoubles": 6000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d51ca874c20a17f40f8ce": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 8,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "694d7332a9f57254a140f8d2": {
+    "itemTplToClone": "6374a7e7417239a7bf00f042",
+    "parentId": "55818a684bdc2ddd698b456d",
+    "handbookParentId": "5b5f761f86f774094242f1a1",
+    "overrideProperties": {
+      "Prefab": {
+        "path": "22lr/rugerpolymergrips.bundle",
+        "rcid": ""
+      },
+      "Accuracy": 0,
+      "BackgroundColor": "blue",
+      "UniqueAnimationModID":10,
+      "Ergonomics": 12,
+      "Height": 1,
+      "RaidModdable": false,
+      "Recoil": 0,
+      "Weight": 0.017,
+      "Width": 1,
+      "Grids": [],
+      "Slots": []
+    },
+    "locales": {
+      "en": {
+        "name": "rugerpolgrip",
+        "shortName": "rugerpolgrip",
+        "description": "rugerpolgrip"
+      }
+    },
+    "fleaPriceRoubles": 7500,
+    "handbookPriceRoubles": 6500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d7352421e0f3f8140f8d3": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 4,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+ 
+  "694d576f3a480ae8db40f8d0": {
+    "itemTplToClone": "544a38634bdc2d58388b4568",
+    "parentId": "550aa4dd4bdc2dc9348b4569",
+    "handbookParentId": "5b5f72f786f77447ec5d7702",
+    "overrideProperties": {
+      "Prefab": {
+        "path": "22lr/rugertp.bundle",
+        "rcid": ""
+      },
+      "Accuracy": 0,
+      "BackgroundColor": "blue",
+      "Ergonomics": 1,
+      "CoolFactor":1,
+      "HeatFactor":1,
+      "Velocity":0,
+      "muzzleModType":"muzzleCombo",
+      "Loudness":0,
+      "Height": 1,
+      "Recoil": 0,
+      "Weight": 0.01,
+      "Width": 1,
+      "Grids": [],
+      "Slots": []
+    },
+    "locales": {
+      "en": {
+        "name": "rugerthreadprot",
+        "shortName": "rugerthreadprot",
+        "description": "rugerthreadprot "
+      }
+    },
+    "fleaPriceRoubles": 1000,
+    "handbookPriceRoubles": 800,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": true,
+    "modSlot": [
+      "mod_muzzle"
+    ],
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d5771531e57433140f8d1": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 2,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "694d8611a9a00cec0d40f8d5": {
+    "itemTplToClone": "6374a822e629013b9c0645c8",
+    "parentId": "55818a304bdc2db5418b457d",
+    "handbookParentId": "5b5f764186f77447ec5d7714",
+    "overrideProperties": {
+      "Prefab": {
+        "path": "22lr/rugerbolts.bundle",
+        "rcid": ""
+      },
+      "Accuracy": 0,
+      "BackgroundColor": "blue",
+      "Ergonomics": 5,
+      "Height": 1,
+      "Recoil": 0,
+      "Weight": 0.15,
+      "Width": 1,
+      "Grids": [],
+      "Slots": []
+    },
+    "locales": {
+      "en": {
+        "name": "rugerbolt",
+        "shortName": "rugerbolt",
+        "description": "rugerbolt "
+      }
+    },
+    "fleaPriceRoubles": 1000,
+    "handbookPriceRoubles": 800,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+          {
+        "containerName": "LOOTCONTAINER_DEAD_SCAV",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "694d86556befcbeb9840f8d6": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 2,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  }
+
+}

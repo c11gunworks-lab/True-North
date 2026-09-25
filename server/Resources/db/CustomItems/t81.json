@@ -1,0 +1,1616 @@
+﻿{
+  "6930cde327aa0ba2c16d3d01": {
+    "itemTplToClone": "59e6152586f77473dc057aa1",
+    "parentId": "5447b5fc4bdc2d87278b4567",
+    "handbookParentId": "5b5f78e986f77447ed5636b1",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81.bundle",
+        "rcid": ""
+      },
+      "BackgroundColor": "black",
+      "MergesWithChildren": true,
+      "Width": 4,
+      "Height": 1,
+      "Weight": 3.95,
+      "RecoilForceUp": 125,
+      "RecoilForceBack": 270,
+      "RecoilCamera": 0.08,
+      "Convergence": 2.0,
+      "DeviationCurve":3.35,
+      "SightingRange":100,
+      "SingleFireRate": 450,
+      "CanQueueSecondShot": true,
+      "bFirerate": 40,
+      "Ergonomics": 50,
+      "Velocity": 0,
+      "bEffDist": 250,
+      "bHearDist": 80,
+      "isChamberLoad": true,
+      "chamberAmmoCount": 1,
+      "isBoltCatch": false,
+      "defMagType": "6930d355328696040a6d3d16",
+      "ammoCaliber": "Caliber762x39",
+      "isFastReload": true,
+      "weapFireType": [
+        "single"
+      ],
+      "defAmmo": "5656d7c34bdc2d9d198b4587",
+      "Chambers": [
+        {
+          "_name": "patron_in_weapon",
+          "_id": "6930cefee8527be4116d3d07",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "59e0d99486f7744a32234762",
+                  "59e4d3d286f774176a36250a",
+                  "5656d7c34bdc2d9d198b4587",
+                  "59e4cf5286f7741778269d8a",
+                  "59e4d24686f7741776641ac7",
+                  "601aa3d2b2bcb34913271e6d",
+                  "64b7af5a8532cf95ee0a0dbd",
+                  "64b7af434b75259c590fa893",
+                  "64b7af734b75259c590fa895"
+                ]
+              }
+            ]
+          },
+          "_required": false,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d4af244bdc2d962f8b4571"
+        }
+      ],
+      "ReloadMode": "ExternalMagazine",
+      "Foldable": false,
+      "Retractable": false,
+      "CompactHandling": true,
+      "Slots": [
+        {
+          "_name": "mod_gas_block",
+          "_id": "6930ce40e7f302f60c6d3d02",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "Shift": 0,
+                "Filter": [
+                  "6930d0095c6559e2816d3d0a"
+                ]
+              }
+            ]
+          },
+          "_required": true,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        },
+        {
+          "_name": "mod_magazine",
+          "_id": "6930ce520f6bf013606d3d03",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "AnimationIndex":-1,
+                "Shift": 0,
+                "Filter": [
+                  "6930d355328696040a6d3d16",
+                  "693322bda247a70444b155d2",
+                  "6967ff3c0a67676e10a35d59"
+                ]
+              }
+            ]
+          },
+          "_required": false,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        },
+        {
+          "_id": "6930ce6448604807f76d3d04",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_muzzle",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+"6930d46773f977e1746d3d19",
+                  "6933214ee8e7f9e95db155cf"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        },
+        {
+          "_name": "mod_reciever",
+          "_id": "6930ce7ab61b44d1b86d3d05",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "Shift": 0,
+                "Filter": [
+                  "6930cfb2b708723c496d3d09",
+                  "695998fdbbb7a9ea8221a20e"     ,
+                "6959ae648ab2d4472721a22e"]
+              }
+            ]
+          },
+          "_required": false,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        },
+        {
+          "_name": "mod_stock",
+          "_id": "6930ce87f213cd2d286d3d06",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "shift": 0,
+                "Filter": [
+"6930d291dbd8befb636d3d12",
+                "693224968a1d92759be95bee",
+                  "6932eef319a1361673b155cd",
+                  "695999fa946736058d21a215",
+                  "6959aeabb718f8c8e421a237",
+                  "6960451b092ed1ff3f446f7b"
+
+                ]
+              }
+            ]
+          },
+          "_required": false,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        },
+        {
+          "_name": "mod_pistol_grip",
+          "_id": "6930f0d8dd0ea2c392c33498",
+          "_parent": "6930cde327aa0ba2c16d3d01",
+          "_props": {
+            "filters": [
+              {
+                "shift": 0,
+                "Filter": [
+                  "6930d2efff08b89be96d3d14",
+                  "69599b727e06e825d921a21b",
+                  "6959af89357f345cf121a240"
+                ]
+              }
+            ]
+          },
+          "_required": true,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        }
+      ],
+      "Grids": []
+
+     
+    },
+    "locales": {
+      "en": {
+        "name": "Poly Technologies Type 81 Special Edition (Red)",
+        "shortName": "Type 81",
+        "description": "Essentially a slightly modernized SKS, made specifically for the Canadian Civilian Market and the Indonesian Military. Ths one's red, so it goes faster. Wildly inaccurate after 100yds but cheap to aquire."
+      }
+    },
+    "fleaPriceRoubles": 25000,
+    "handbookPriceRoubles": 17500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_5X2",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "6959a7169b6dadf5c8e933df",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Canadian Edition",
+        "_parent": "6959a7169b6dadf5c8e933e0",
+        "_items": [
+          {
+            "_id": "6959a7169b6dadf5c8e933e0",
+            "_tpl": "6930cde327aa0ba2c16d3d01",
+            "upd": {
+              "Repairable": {
+                "Durability": 100,
+                "MaxDurability": 100
+              },
+              "FireMode": {
+                "FireMode": "single"
+              }
+            }
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9da",
+            "_tpl": "6930d0095c6559e2816d3d0a",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_gas_block"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9db",
+            "_tpl": "693322bda247a70444b155d2",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9dc",
+            "_tpl": "6930d46773f977e1746d3d19",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9dd",
+            "_tpl": "6930cfb2b708723c496d3d09",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9de",
+            "_tpl": "6930d291dbd8befb636d3d12",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9df",
+            "_tpl": "6930d2efff08b89be96d3d14",
+            "parentId": "6959a7169b6dadf5c8e933e0",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9e0",
+            "_tpl": "6930d0ab3adc98bda56d3d0c",
+            "parentId": "693b3380bb6046f96c3aa9da",
+            "slotId": "mod_handguard"
+          },
+          {
+            "_id": "693b3380bb6046f96c3aa9e1",
+            "_tpl": "6930d1c9eb251e06e06d3d10",
+            "parentId": "693b3380bb6046f96c3aa9e0",
+            "slotId": "mod_handguard_000"
+          }
+        ],
+        "_encyclopedia": "6930cde327aa0ba2c16d3d01"
+      },
+      {
+        "_id": "6959a7169b6dadf5c8e933e4",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Brutality Edition",
+        "_parent": "6959a7169b6dadf5c8e933e5",
+        "_items": [
+          {
+            "_id": "6959a7169b6dadf5c8e933e5",
+            "_tpl": "6930cde327aa0ba2c16d3d01",
+            "upd": {
+              "Repairable": {
+                "Durability": 100,
+                "MaxDurability": 100
+              },
+              "FireMode": {
+                "FireMode": "single"
+              }
+            }
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab75e",
+            "_tpl": "6930d0095c6559e2816d3d0a",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_gas_block"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab75f",
+            "_tpl": "6930d355328696040a6d3d16",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab760",
+            "_tpl": "6933214ee8e7f9e95db155cf",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab761",
+            "_tpl": "6930cfb2b708723c496d3d09",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab762",
+            "_tpl": "6932eef319a1361673b155cd",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab763",
+            "_tpl": "6930d2efff08b89be96d3d14",
+            "parentId": "6959a7169b6dadf5c8e933e5",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab764",
+            "_tpl": "6930d0ab3adc98bda56d3d0c",
+            "parentId": "693b33e0bb6046f96c3ab75e",
+            "slotId": "mod_handguard"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab765",
+            "_tpl": "5649ab884bdc2ded0b8b457f",
+            "parentId": "693b33e0bb6046f96c3ab760",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab766",
+            "_tpl": "693225c799989d996ae95bf3",
+            "parentId": "693b33e0bb6046f96c3ab764",
+            "slotId": "mod_handguard_000"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab767",
+            "_tpl": "5c1bc7752e221602b1779b34",
+            "parentId": "693b33e0bb6046f96c3ab766",
+            "slotId": "mod_foregrip"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab768",
+            "_tpl": "6932252226dccbce54e95bf0",
+            "parentId": "693b33e0bb6046f96c3ab766",
+            "slotId": "mod_mount"
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab769",
+            "_tpl": "626becf9582c3e319310b837",
+            "parentId": "693b33e0bb6046f96c3ab766",
+            "slotId": "mod_tactical",
+            "upd": {
+              "Light": {
+                "IsActive": true,
+                "SelectedMode": 0
+              }
+            }
+          },
+          {
+            "_id": "693b33e0bb6046f96c3ab76a",
+            "_tpl": "584924ec24597768f12ae244",
+            "parentId": "693b33e0bb6046f96c3ab768",
+            "slotId": "mod_sight",
+            "upd": {
+              "Sight": {
+                "ScopesCurrentCalibPointIndexes": [
+                  0
+                ],
+                "ScopesSelectedModes": [
+                  0
+                ],
+                "SelectedScope": 0,
+                "ScopeZoomValue": 0
+              }
+            }
+          }
+        ],
+        "_encyclopedia": "6930cde327aa0ba2c16d3d01"
+      }
+
+
+
+    ],
+    "masterySections": [
+      {
+        "Level2": 150,
+        "Level3": 200,
+        "Name": "Type 81",
+        "Templates": [
+          "6930cde327aa0ba2c16d3d01"
+        ]
+      }
+    ],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6930cfa508316815076d3d08": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 225,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6930cfb2b708723c496d3d09": {
+    "itemTplToClone": "5649af094bdc2df8348b4586",
+    "parentId": "55818a304bdc2db5418b457d",
+    "handbookParentId": "5b5f764186f77447ec5d7714",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81dust.bundle",
+        "rcid": ""
+      },
+      "BackgroundColor": "black",
+      "MergesWithChildren": true,
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.65,
+      "Slots": [
+        
+      ],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "name": "Poly Technologies Type 81 Dust Cover",
+        "ShortName": "T81 Dust",
+        "description": "A dust cover capable of (supposedly) keeping the dust out"
+      }
+    },
+    "fleaPriceRoubles": 5000,
+    "handbookPriceRoubles": 1500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69df99702d1cb78426f0dbf1": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 65,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6930d0095c6559e2816d3d0a": {
+    "itemTplToClone": "59d64ec286f774171d1e0a42",
+    "parentId": "56ea9461d2720b67698b456f",
+    "handbookParentId": "5b5f760586f774093e6cb509",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81gas.bundle",
+        "rcid": ""
+      },
+      "BackgroundColor": "blue",
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.35,
+      "HeatFactor": 0.95,
+      "Slots": [
+        {
+          "_name": "mod_handguard",
+          "_id": "6930d0389fb7dec0b76d3d0b",
+          "_parent": "6930d0095c6559e2816d3d0a",
+          "_props": {
+            "filters": [
+              {
+                "Shift": 0,
+                "Filter": [
+                  "6930d0ab3adc98bda56d3d0c",
+                  "6959993ecb9c07cd0421a210",
+                  "6959ae8a8609fc1ded21a231"
+                ]
+              }
+            ]
+          },
+          "_required": true,
+          "_mergeSlotWithChildren": false,
+          "_proto": "55d30c4c4bdc2db4468b457e"
+        }
+        
+            ],
+         
+      
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "name": "Poly Technologies Type 81 Gas Piston",
+        "ShortName": "T81 Gas",
+        "description": "Its a big piston but not Cummins big"
+      }
+    },
+    "fleaPriceRoubles": 4500,
+    "handbookPriceRoubles": 5500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6920fad142c29716ee18da74": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 65,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  
+  "6930d0ab3adc98bda56d3d0c": {
+    "itemTplToClone": "59d64f2f86f77417193ef8b3",
+    "parentId": "55818a104bdc2db9688b4569",
+    "handbookParentId": "5b5f75e486f77447ec5d7712",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81thg.bundle",
+        "rcid": ""
+      },
+      "BackgroundColor": "black",
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.28,
+      "Ergonomics": 4,
+      "Recoil": -2,
+      "Grids": [],
+      "Slots": [{
+        "_name": "mod_handguard_000",
+        "_id": "6930d104ab67d28f106d3d0d",
+        "_parent": "6930d0ab3adc98bda56d3d0c",
+        "_props": {
+          "filters": [
+            {
+              "Shift": 0,
+              "Filter": [
+                "693225c799989d996ae95bf3",
+                "6930d1c9eb251e06e06d3d10",
+                "695999901ac7ab67ee21a213",
+                "6959aea76bcb6afbd721a235",
+                "693225c799989d996ae95bf3",
+                "69604054ad6ba86d79446f6f",
+                "6960434f897946d918446f76"
+              ]
+            }
+          ]
+        },
+        "_required": true,
+        "_mergeSlotWithChildren": false,
+        "_proto": "55d30c4c4bdc2db4468b457e"
+      }]
+    },
+    "locales": {
+      "en": {
+        "name": "Poly Technologies Type 81 Upper Gas Tube Cover",
+        "ShortName": "T81 Gas Cover",
+        "Description": "Cherry red like lipstick on a pig"
+      }
+    },
+    "fleaPriceRoubles": 8900,
+    "handbookPriceRoubles": 1500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6930d1447434bf89d06d3d0e": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 80,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6930d1c9eb251e06e06d3d10": {
+    "itemTplToClone": "59d64f2f86f77417193ef8b3",
+    "parentId": "55818a104bdc2db9688b4569",
+    "handbookParentId": "5b5f75e486f77447ec5d7712",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81fhg.bundle",
+        "rcid": ""
+      },
+      "BackgroundColor": "black",
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
+      "Ergonomics": 1,
+      "Recoil": -2,
+      "Grids": [],
+      "Slots": [
+        
+      ]
+    },
+    "locales": {
+      "en": {
+        "name": "Poly Technologies Type 81 Lower Handguard",
+        "ShortName": "T81 Handguard",
+        "Description": "She was Red"
+      }
+    },
+    "fleaPriceRoubles": 8500,
+    "handbookPriceRoubles": 5500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6920fc2561e98f72d568b7b3": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 95,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  
+  "6930d291dbd8befb636d3d12": {
+    "itemTplToClone": "5649b1c04bdc2d16268b457c",
+    "parentId": "55818a594bdc2db9688b456a",
+    "handbookParentId": "5b5f757486f774093e6cb507",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81stock.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.45,
+      "ExtraSizeLeft": 1,
+      "Ergonomics": 9,
+      "Recoil": -25,
+      "Slots": [],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "Name": "Poly Technologies Type 81 Special Edition Stock",
+        "ShortName": "T81 SE Stock",
+        "Description": "Redder than the Red Army"
+      }
+    },
+    "fleaPriceRoubles": 25000,
+    "handbookPriceRoubles": 25500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6930d2cd864ccbfdfa6d3d13": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 275,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6932eef319a1361673b155cd": {
+    "itemTplToClone": "5894a13e86f7742405482982",
+    "parentId": "55818a594bdc2db9688b456a",
+    "handbookParentId": "5b5f757486f774093e6cb507",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81acr.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 1.1,
+      "ExtraSizeRight":1,
+      "Ergonomics": 19,
+      "Recoil": -25,
+      "Slots": [],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "Name": "C11 Gunworks Type 81 ACR Stock Adapter",
+        "ShortName": "C11 T81 ACR",
+        "Description": "Why not slap a stock worth close to half the price of the rifle on?"
+      }
+    },
+    "fleaPriceRoubles": 45000,
+    "handbookPriceRoubles": 45500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6932efc8e78eb21bc6b155ce": {
+          "barterSettings": {
+            "loyalLevel": 3,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 475,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+
+  "6930d2efff08b89be96d3d14": {
+    "itemTplToClone": "5649ad3f4bdc2df8348b4585",
+    "parentId": "55818a684bdc2ddd698b456d",
+    "handbookParentId": "5b5f761f86f774094242f1a1",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81pg.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.45,
+      "ExtraSizeDown": 1,
+      "ExtraSizeForceAdd":false,
+      "ExtraSizeUp":0,
+      "Ergonomics": 4,
+      "Recoil": -7,
+      "Slots": [],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "Name": "Poly Technologies Type 81 Special Edition Pistol Grip",
+        "ShortName": "T81 SE Grip",
+        "Description": "Santa's Chopper"
+      }
+    },
+    "fleaPriceRoubles": 5000,
+    "handbookPriceRoubles": 2500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6930d34583f4012bc96d3d15": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 75,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6930d355328696040a6d3d16": {
+    "itemTplToClone": "59d625f086f774661516605d",
+    "parentId": "5448bc234bdc2d3c308b4569",
+    "handbookParentId": "5b5f754a86f774094242f19b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81mag.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 2,
+      "Weight": 1.0,
+      "CanFast":true,
+      "CanHit":true,
+      "VisibleAmmoRangesString":"1-5",
+      "CanPutIntoDuringTheRaid":true,
+      "ExtraSizeDown":1,
+
+      "Cartridges": 
+[
+  {
+    "_id": "6930d3bdc9272feccd6d3d17",
+    "_max_count": 30,
+    "_name": "cartridges",
+    "_parent": "6930d355328696040a6d3d16",
+    "_props": {
+      "filters": [
+        {
+          "Filter": [
+            "59e0d99486f7744a32234762",
+            "59e4d3d286f774176a36250a",
+            "5656d7c34bdc2d9d198b4587",
+            "59e4cf5286f7741778269d8a",
+            "59e4d24686f7741776641ac7",
+            "601aa3d2b2bcb34913271e6d",
+            "64b7af734b75259c590fa895",
+            "64b7af434b75259c590fa893",
+            "64b7af5a8532cf95ee0a0dbd"
+          ]
+        }
+      ]
+    },
+    "_proto": "5748538b2459770af276a261"
+  }
+],
+      "Slots": [],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "Name": "Poly Technologies Type 81 Special Edition Magazine 30-rounder",
+        "ShortName": "T81 SE 30 Mag",
+        "Description": "The pin fell out, oh no."
+      }
+    },
+    "fleaPriceRoubles": 45000,
+    "handbookPriceRoubles": 12500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": false,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6930d44474028b03656d3d18": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 45,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "693322bda247a70444b155d2": {
+    "itemTplToClone": "59e5d83b86f7745aed03d262",
+    "parentId": "5448bc234bdc2d3c308b4569",
+    "handbookParentId": "5b5f754a86f774094242f19b",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "t81master/t81mag5.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 2,
+      "Weight": 1.0,
+      "CanFast":true,
+      "CanHit":true,
+      "VisibleAmmoRangesString":"1-5",
+      "CanPutIntoDuringTheRaid":true,
+      "ExtraSizeDown":1,
+      "magAnimationIndex":0,
+
+      "Cartridges":
+      [
+        {
+          "_id": "6933231a3a087aedf0b155d3",
+          "_max_count": 5,
+          "_name": "cartridges",
+          "_parent": "693322bda247a70444b155d2",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "59e0d99486f7744a32234762",
+                  "59e4d3d286f774176a36250a",
+                  "5656d7c34bdc2d9d198b4587",
+                  "59e4cf5286f7741778269d8a",
+                  "59e4d24686f7741776641ac7",
+                  "601aa3d2b2bcb34913271e6d",
+                  "64b7af734b75259c590fa895",
+                  "64b7af434b75259c590fa893",
+                  "64b7af5a8532cf95ee0a0dbd"
+                ]
+              }
+            ]
+          },
+          "_proto": "5748538b2459770af276a261"
+        }
+      ],
+      "Slots": [],
+      "Grids": []
+    },
+    "locales": {
+      "en": {
+        "Name": "Poly Technologies Type 81 Special Edition 5-round Pinned Magazine",
+        "ShortName": "T81 SE Pin Mag",
+        "Description": "Canadian Standard Civilian Mag."
+      }
+    },
+    "fleaPriceRoubles": 5000,
+    "handbookPriceRoubles": 2500,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": true,
+    "staticLootContainers": [
+            {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "6933234168d8a859ddb155d4": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 15,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6930d46773f977e1746d3d19": {
+    "itemTplToClone": "5649aa744bdc2ded0b8b457e",
+    "parentId": "550aa4bf4bdc2dd6348b456b",
+    "handbookParentId": "5b5f724c86f774093f2ecf15",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": { "path": "t81master/t81gl.bundle", "rcid": "" },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.3,
+      "Ergonomics": -2,
+      "Recoil": 0,
+      "MergesWithChildren":true,
+      "Grids": [],
+      "Slots": []
+    },
+    "locales": { "en":
+    { "Name":    "Poly Technologies Type 81 Grenade Launcher Sleeve",
+      "ShortName": "T81 GL Sleeve",
+      "Description": "No, I'm not adding in any rifle grenades. " } },
+    "fleaPriceRoubles": 8000,
+    "handbookPriceRoubles": 7000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+
+    "traders": {
+      "TRUDY": {
+        "6930ed35c46fe1f8e3c33497": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 60,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6933214ee8e7f9e95db155cf": {
+    "itemTplToClone": "5a0abb6e1526d8000a025282",
+    "parentId": "550aa4dd4bdc2dc9348b4569",
+    "handbookParentId": "5b5f72f786f77447ec5d7702",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": { "path": "t81master/t81sigm.bundle", "rcid": "" },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.3,
+      "Ergonomics": -1,
+      "Recoil": 0,
+      "MergesWithChildren":true,
+      "Grids": [],
+      "Slots": [
+        {
+          "_id": "6933221c4aab706e98b155d0",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_muzzle",
+          "_parent": "6933214ee8e7f9e95db155cf",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "5ac72e7d5acfc40016339a02",
+                  "5ac72e895acfc43b321d4bd5",
+                  "5f633f791b231926f2329f13",
+                  "5cc9ad73d7f00c000e2579d4",
+                  "5649ab884bdc2ded0b8b457f",
+                  "5e208b9842457a4a7a33d074",
+                  "59fb257e86f7742981561852"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        }
+      ]
+    },
+    "locales": { "en":
+    { "Name":    "Sigmaco Canada Threaded Barrel Sleeve",
+      "ShortName": "T81 Thr Sleeve",
+      "Description": "Add muzzle devices to your Type 81, and don't look too hard into what sort of federal institution the owner of the company currently resides in. " } },
+    "fleaPriceRoubles": 18000,
+    "handbookPriceRoubles": 17000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+
+    "traders": {
+      "TRUDY": {
+        "6933227146e02396a3b155d1": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 160,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "693224968a1d92759be95bee": {
+    "itemTplToClone": "5649b2314bdc2d79388b4576",
+    "parentId": "55818a594bdc2db9688b456a",
+    "handbookParentId": "5b5f757486f774093e6cb507",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": { "path": "t81master/t81buffer.bundle", "rcid": "" },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.5,
+      "Ergonomics": -1,
+      "Recoil": 0,
+      "MergesWithChildren":true,
+      "Grids": [],
+      "Slots": [
+        {
+          "_id": "6932ecfe71bd5bdf79b155cc",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_stock",
+          "_parent": "693224968a1d92759be95bee",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "57ade1442459771557167e15",
+                  "5a33ca0fc4a282000d72292f",
+                  "5c0faeddd174af02a962601f",
+                  "5649be884bdc2d79388b4577",
+                  "5d120a10d7ad1a4e1026ba85",
+                  "5b0800175acfc400153aebd4",
+                  "5bb20e58d4351e00320205d7",
+                  "5947e98b86f774778f1448bc",
+                  "5947eab886f77475961d96c5",
+                  "5ef1ba28c64c5d0dfc0571a5",
+                  "602e3f1254072b51b239f713",
+                  "5c793fb92e221644f31bfb64",
+                  "5c793fc42e221600114ca25d",
+                  "591aef7986f774139d495f03",
+                  "591af10186f774139d495f0e",
+                  "627254cc9c563e6e442c398f",
+                  "638de3603a1a4031d8260b8c"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        }
+      ]
+    },
+    "locales": { "en":
+    { "Name":    "C11 Gunworks Type 81 Buffer Tube Adapter",
+      "ShortName": "T81 Buffer",
+      "Description": "It technically could have existed " } },
+    "fleaPriceRoubles": 18000,
+    "handbookPriceRoubles": 17000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+
+    "traders": {
+      "TRUDY": {
+        "693224f5ecebe55e8fe95bef": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 160,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "6932252226dccbce54e95bf0": {
+    "itemTplToClone": "57ffb0062459777a045af529",
+    "parentId": "55818b224bdc2dde698b456f",
+    "handbookParentId": "5b5f755f86f77447ec5d770e",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": { "path": "t81master/t81zmoung.bundle", "rcid": "" },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.5,
+      "Ergonomics": -1,
+      "MergesWithChildren":true,
+      "ConflictingItems":["57ffaea724597779f52b3a4d"],
+      "Grids": [],
+      "Slots": [
+        {
+          "_id": "69322555c25b272375e95bf1",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_sight",
+          "_parent": "6932252226dccbce54e95bf0",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "58d39d3d86f77445bb794ae7",
+                  "616554fe50224f204c1da2aa",
+                  "5c7d55f52e221644f31bff6a",
+                  "616584766ef05c2ce828ef57",
+                  "577d128124597739d65d0e56",
+                  "615d8d878004cc50514c3233",
+                  "5b31163c5acfc400153b71cb",
+                  "5a33b652c4a28232996e407c",
+                  "5a33b2c9c4a282000c5a9511",
+                  "58d2664f86f7747fec5834f6",
+                  "57ae0171245977343c27bfcf",
+                  "558022b54bdc2dac148b458d",
+                  "58491f3324597764bc48fa02",
+                  "584924ec24597768f12ae244",
+                  "5b30b0dc5acfc400153b7124",
+                  "60a23797a37c940de7062d02",
+                  "5d2da1e948f035477b1ce2ba",
+                  "584984812459776a704a82a6",
+                  "570fd721d2720bc5458b4596",
+                  "64785e7c19d732620e045e15"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        }
+      ]
+    },
+    "locales": { "en":
+    { "Name":    "C11 Gunworks Type 81 Zenitco Sight Adapter",
+      "ShortName": "T81 Zenit Sight",
+      "Description": "This would be real, but.... " } },
+    "fleaPriceRoubles": 28000,
+    "handbookPriceRoubles": 27000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+
+    "traders": {
+      "TRUDY": {
+        "6933298d51e9454b96b155d5": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 260,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "693225c799989d996ae95bf3": {
+    "itemTplToClone": "5c617a5f2e2216000f1e81b3",
+    "parentId": "55818a104bdc2db9688b4569",
+    "handbookParentId": "5b5f75e486f77447ec5d7712",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": { "path": "t81master/t81zenit.bundle", "rcid": "" },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.15,
+      "MergesWithChildren":true,
+      "Grids": [],
+      "Slots": [
+        {
+          "_id": "6932262572b80a44dee95bf4",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_foregrip",
+          "_parent": "693225c799989d996ae95bf3",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "5c7fc87d2e221644f31c0298",
+                  "5cda9bcfd7f00c0c0b53e900",
+                  "59f8a37386f7747af3328f06",
+                  "619386379fb0c665d5490dbe",
+                  "5c87ca002e221600114cb150",
+                  "588226d124597767ad33f787",
+                  "588226dd24597767ad33f789",
+                  "588226e62459776e3e094af7",
+                  "588226ef24597767af46e39c",
+                  "59fc48e086f77463b1118392",
+                  "5fce0cf655375d18a253eff0",
+                  "5cf4fb76d7f00c065703d3ac",
+                  "5b057b4f5acfc4771e1bd3e9",
+                  "5c791e872e2216001219c40a",
+                  "558032614bdc2de7118b4585",
+                  "58c157be86f77403c74b2bb6",
+                  "58c157c886f774032749fb06",
+                  "5f6340d3ca442212f4047eb2",
+                  "591af28e86f77414a27a9e1d",
+                  "5c1cd46f2e22164bef5cfedb",
+                  "5c1bc4812e22164bef5cfde7",
+                  "5c1bc5612e221602b5429350",
+                  "5c1bc5af2e221602b412949b",
+                  "5c1bc5fb2e221602b1779b32",
+                  "5c1bc7432e221602b412949d",
+                  "5c1bc7752e221602b1779b34",
+                  "64806bdd26c80811d408d37a",
+                  "64807a29e5ffe165600abc97",
+                  "648067db042be0705c0b3009",
+                  "65169d5b30425317755f8e25",
+                  "655df24fdf80b12750626d0a",
+                  "655dccfdbdcc6b5df71382b6",
+                  "661e52e29c8b4dadef008577",
+                  "661e53149c8b4dadef008579",
+                  "661e52415be02310ed07a07a",
+                  "661e52b5b099f32c28003586"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        },
+        {
+          "_id": "6932263727f38e4440e95bf6",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_mount",
+          "_parent": "693225c799989d996ae95bf3",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [ "6932252226dccbce54e95bf0"
+                  
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        },
+        {
+          "_id": "693226299de18597b6e95bf5",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_tactical",
+          "_parent": "693225c799989d996ae95bf3",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "5a800961159bd4315e3a1657",
+                  "57fd23e32459772d0805bcf1",
+                  "544909bb4bdc2d6f028b4577",
+                  "5c06595c0db834001a66af6c",
+                  "5cc9c20cd7f00c001336c65d",
+                  "5d2369418abbc306c62e0c80",
+                  "5b07dd285acfc4001754240d",
+                  "56def37dd2720bec348b456a",
+                  "5a7b483fe899ef0016170d15",
+                  "61605d88ffa6e502ac5e7eeb",
+                  "5a5f1ce64f39f90b401987bc",
+                  "560d657b4bdc2da74d8b4572",
+                  "5b3a337e5acfc4704b4a19a0",
+                  "5c5952732e2216398b5abda2",
+                  "57d17e212459775a1179a0f5",
+                  "57ffaea724597779f52b3a4d",
+                  "6267c6396b642f77f56f5c1c",
+                  "6272370ee4013c5d7e31f418",
+                  "6272379924e29f06af4d5ecb",
+                  "626becf9582c3e319310b837",
+                  "644a3df63b0b6f03e101e065",
+                  "646f6322f43d0c5d62063715"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        }
+      ]
+    },
+    "locales": {
+      "en":
+    {
+      "Name":    "C11 Gunworks Type 81 Zenitco B-10 Handguard",
+      "ShortName": "T81 Zenit HG",
+      "Description": "A Zenitco B-10 handguard that's been milled out by a local gunsmith for the Type 81. "
+    }
+    },
+    "fleaPriceRoubles": 38000,
+    "handbookPriceRoubles": 37000,
+    "addtoBots": false,
+    "addtoSpecialSlots": false,
+    "addtoStaticLootContainers": true,
+
+    "staticLootContainers": [
+           {
+        "containerName": "LOOTCONTAINER_WOODEN_CRATE",
+        "probability": 150
+      },
+      {
+      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+      "probability": 250
+      }
+    ],
+    "addtoSecureFilters": true,
+    "addtoTraders": false,
+
+    "traders": {
+      "TRUDY": {
+        "693225a575c3104668e95bf2": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters": [
+            {
+              "count": 360,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Core build settings -->
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>c11_tn_4</RootNamespace>
+    <AssemblyName>c11-tn-4</AssemblyName>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <!-- Paths -->
+  <PropertyGroup>
+    <!-- One place to change when SPT moves. Override on the command line with:
+         dotnet build -c Release -p:SptDir=D:\SomewhereElse -->
+    <SptDir Condition="'$(SptDir)' == ''">C:\SPT4.1</SptDir>
+    <SptModsDir>$(SptDir)\SPT_Runtime\user\mods\c11-tn-4</SptModsDir>
+
+    <ResourceDir>$(MSBuildProjectDirectory)\Resources</ResourceDir>
+    <DbSourceDir>$(ResourceDir)\db</DbSourceDir>
+    <BundleSourceDir>$(ResourceDir)\bundles</BundleSourceDir>
+    <BundleManifest>$(ResourceDir)\bundles.json</BundleManifest>
+    <VersionFile>$(MSBuildProjectDirectory)\version.txt</VersionFile>
+  </PropertyGroup>
+
+  <!-- ExcludeAssets="runtime" keeps the compile-time reference but stops the
+       DLL being copied into bin and shipped with the mod. -->
+  <ItemGroup>
+    <PackageReference Include="WTT-ServerCommonLib" Version="3.0.6" ExcludeAssets="runtime" />
+  </ItemGroup>
+
+  <!-- Build order only (no DLL is referenced or copied). Forces the client to build first,
+       so it reads version.txt before this project's BumpPatch increments it. -->
+  <ItemGroup>
+    <ProjectReference Include="..\client\C11-TN4-Client.csproj" ReferenceOutputAssembly="false" Private="false" />
+  </ItemGroup>
+
+  <Import Project="BundleSync.targets" />
+
+  <!-- Fail loudly if a source is missing, instead of silently shipping nothing -->
+  <Target Name="VerifyModSources" BeforeTargets="BeforeBuild">
+    <Error Condition="!Exists('$(DbSourceDir)')" Text="DbSourceDir not found: $(DbSourceDir)" />
+    <Error Condition="!Exists('$(BundleSourceDir)')" Text="BundleSourceDir not found: $(BundleSourceDir)" />
+    <Error Condition="!Exists('$(BundleManifest)')" Text="bundles.json not found: $(BundleManifest)" />
+  </Target>
+
+  <!-- Keep bundles.json and item Prefab paths in sync with the files on disk.
+       Runs on every build (Debug too) so a bad path fails before anything ships. -->
+  <Target Name="SyncBundles" AfterTargets="VerifyModSources">
+    <!-- File lists live inside targets so the IDE doesn't show every file twice -->
+    <ItemGroup>
+      <DbJson Include="$(DbSourceDir)\**\*.json" />
+    </ItemGroup>
+    <SyncBundlePaths BundleManifest="$(BundleManifest)"
+                     BundleDir="$(BundleSourceDir)"
+                     DbJsonFiles="@(DbJson)" />
+  </Target>
+
+  <!-- Reads version.txt, stamps it into the DLL, then bumps the patch for next time.
+       Release builds only, so Debug test builds don't burn version numbers. -->
+  <Target Name="ReadVersionFile" BeforeTargets="BeforeBuild" Condition="'$(Configuration)' == 'Release'">
+    <ReadLinesFromFile File="$(VersionFile)">
+      <Output TaskParameter="Lines" PropertyName="_FileVersion" />
+    </ReadLinesFromFile>
+    <PropertyGroup>
+      <Version>$(_FileVersion.Trim())</Version>
+      <AssemblyVersion>$(Version)</AssemblyVersion>
+      <FileVersion>$(Version)</FileVersion>
+      <InformationalVersion>$(Version)</InformationalVersion>
+    </PropertyGroup>
+    <Message Importance="high" Text="Building version $(Version)" />
+  </Target>
+
+  <!-- AfterTargets="Build" only runs if the build succeeded, so a failed build doesn't bump -->
+  <Target Name="BumpPatch" AfterTargets="Build" Condition="'$(Configuration)' == 'Release'">
+    <PropertyGroup>
+      <_Major>$([System.Version]::Parse($(Version)).Major)</_Major>
+      <_Minor>$([System.Version]::Parse($(Version)).Minor)</_Minor>
+      <_Patch>$([MSBuild]::Add($([System.Version]::Parse($(Version)).Build), 1))</_Patch>
+    </PropertyGroup>
+    <WriteLinesToFile File="$(VersionFile)" Lines="$(_Major).$(_Minor).$(_Patch)" Overwrite="true" />
+  </Target>
+
+  <!-- Deploy: wipe the mod folder, then copy everything with folders intact.
+       Only runs after a successful build, so a broken build never deletes a working install. -->
+  <Target Name="DeployMod" AfterTargets="Build">
+    <!-- Everything under db and bundles ships with its folder structure intact:
+         JSON, slot images, quest images, rig layouts, all of it. -->
+    <ItemGroup>
+      <DbFiles Include="$(DbSourceDir)\**\*" />
+      <BundleFiles Include="$(BundleSourceDir)\**\*" />
+    </ItemGroup>
+
+    <Message Importance="high" Text="[Deploy] $(SptModsDir)" />
+    <RemoveDir Directories="$(SptModsDir)" />
+    <MakeDir Directories="$(SptModsDir)" />
+
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(SptModsDir)" />
+    <Copy SourceFiles="$(BundleManifest)" DestinationFolder="$(SptModsDir)" />
+    <Copy SourceFiles="@(DbFiles)" DestinationFiles="@(DbFiles->'$(SptModsDir)\db\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(BundleFiles)" DestinationFiles="@(BundleFiles->'$(SptModsDir)\bundles\%(RecursiveDir)%(Filename)%(Extension)')" />
+
+    <Message Importance="high" Text="[Deploy] Done: @(DbFiles->Count()) db files, @(BundleFiles->Count()) bundle files." />
+  </Target>
+
+</Project>

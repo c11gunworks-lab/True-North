@@ -1,0 +1,386 @@
+{
+  "69f3de69ac93bcc7b9e34f71": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": true,
+      "Prefab": {
+        "path": "knife/karambit.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "Height": 1,
+      "Weight": 0.15,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Durability": 70,
+      "MaxDurability": 70,
+      "knifeDurab": 70,
+      "knifeHitDelay": 0.1,
+      "knifeHitRadius": 0.35,
+      "knifeHitSlashDam": 28,
+      "knifeHitSlashRate": 1.4,
+      "knifeHitStabDam": 26,
+      "knifeHitStabRate": 1.3,
+      "Chambers":[],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "Karambit tactical knife",
+        "shortName": "Karambit",
+        "description": "A curved tactical knife inspired by the claws of a tiger, highly effective for rapid slashing and close-quarters combat."
+      }
+    },
+    "fleaPriceRoubles": 45000,
+    "handbookPriceRoubles": 45000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f3df0c5e6de895afe34f72": {
+          "barterSettings": {
+            "loyalLevel": 3,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 300,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "69f3e174af10d16d81e34f73": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": false,
+      "Prefab": {
+        "path": "knife/karambit_mcb.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Height": 1,
+      "Weight": 0.15,
+      "Durability": 70,
+      "MaxDurability": 70,
+      "knifeDurab": 70,
+      "knifeHitDelay": 0.1,
+      "knifeHitRadius": 0.35,
+      "knifeHitSlashDam": 28,
+      "knifeHitSlashRate": 1.4,
+      "knifeHitStabDam": 26,
+      "knifeHitStabRate": 1.3,
+      "Chambers":[],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "Karambit tactical knife (MCB)",
+        "shortName": "Karambit MCB",
+        "description": "A curved tactical knife featuring a Multicam Black finish on the blade and handle."
+      }
+    },
+    "fleaPriceRoubles": 55000,
+    "handbookPriceRoubles": 55000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f3e17a5f56a71c53e34f74": {
+          "barterSettings": {
+            "loyalLevel": 4,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 350,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "69f3e17e6111bf6ae2e34f75": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": false,
+      "Prefab": {
+        "path": "knife/gbrs_g10.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Height": 1,
+      "Weight": 0.05,
+      "Durability": 25,
+      "MaxDurability": 25,
+      "knifeDurab": 25,
+      "knifeHitDelay": 0.05,
+      "knifeHitRadius": 0.25,
+      "knifeHitSlashDam": 15,
+      "knifeHitSlashRate": 1.6,
+      "knifeHitStabDam": 38,
+      "knifeHitStabRate": 1.5,
+      "Chambers":[],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "GBRS Group G10 covert dagger",
+        "shortName": "G10 Shiv",
+        "description": "A lightweight, non-metallic dagger machined entirely from G10 fiberglass laminate. Extremely fast and easy to conceal, designed specifically as a piercing tool."
+      }
+    },
+    "fleaPriceRoubles": 18000,
+    "handbookPriceRoubles": 18000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f3e186321b1e382ae34f76": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 120,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "69f3e188ceadbcbed5e34f77": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": false,
+      "Prefab": {
+        "path": "knife/short_knife.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Height": 1,
+      "Weight": 0.2,
+      "Durability": 70,
+      "MaxDurability": 70,
+      "knifeDurab": 70,
+      "knifeHitDelay": 0.1,
+      "knifeHitRadius": 0.35,
+      "knifeHitSlashDam": 24,
+      "knifeHitSlashRate": 1.2,
+      "knifeHitStabDam": 26,
+      "knifeHitStabRate": 1.2,
+      "Chambers":[],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "Tactical short knife",
+        "shortName": "Short Knife",
+        "description": "A compact and versatile tactical knife suitable for utility work and personal defense."
+      }
+    },
+    "fleaPriceRoubles": 12000,
+    "handbookPriceRoubles": 12000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f3e19854d9797fe1e34f78": {
+          "barterSettings": {
+            "loyalLevel": 1,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 80,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "69f3e19a4864616557e34f79": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": false,
+      "Prefab": {
+        "path": "knife/fixed_cod.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Height": 1,
+      "Weight": 0.4,
+      "Durability": 70,
+      "MaxDurability": 70,
+      "knifeDurab": 70,
+      "knifeHitDelay": 0.15,
+      "knifeHitRadius": 0.45,
+      "knifeHitSlashDam": 34,
+      "knifeHitSlashRate": 1.0,
+      "knifeHitStabDam": 38,
+      "knifeHitStabRate": 0.9,
+      "Chambers": [],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "Heavy fixed-blade combat knife",
+        "shortName": "Combat Knife",
+        "description": "A rugged, heavy-duty military combat knife with excellent reach and slashing capabilities."
+      }
+    },
+    "fleaPriceRoubles": 32000,
+    "handbookPriceRoubles": 32000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f3e1a923db7c0e41e34f7a": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 210,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "69f4affac52af4c196e34f7b": {
+    "itemTplToClone": "54491bb74bdc2d09088b4567",
+    "parentId": "5447e1d04bdc2dff2f8b4567",
+    "handbookParentId": "5b5f7a0886f77409407a7f96",
+    "overrideProperties": {
+      "ExaminedByDefault": false,
+      "Prefab": {
+        "path": "knife/skeleton_knife.bundle",
+        "rcid": ""
+      },
+      "Width": 2,
+      "CanRequireOnRagfair": false,
+      "CanSellOnRagfair": false,
+      "Height": 1,
+      "Weight": 0.12,
+      "Durability": 70,
+      "MaxDurability": 70,
+      "knifeDurab": 70,
+      "knifeHitDelay": 0.1,
+      "knifeHitRadius": 0.4,
+      "knifeHitSlashDam": 26,
+      "knifeHitSlashRate": 1.3,
+      "knifeHitStabDam": 28,
+      "knifeHitStabRate": 1.2,
+      "Chambers":[],
+      "Slots": [],
+      "Grids":[]
+    },
+    "locales": {
+      "en": {
+        "name": "Skeletonized survival knife",
+        "shortName": "Skeleton",
+        "description": "A lightweight tactical knife featuring a skeletal handle design to reduce weight without sacrificing strength."
+      }
+    },
+    "fleaPriceRoubles": 24000,
+    "handbookPriceRoubles": 24000,
+    "addtoBots": true,
+    "addtoSpecialSlots": false,
+    "addtoModSlots": false,
+    "addtoStaticLootContainers": false,
+    "staticLootContainers":[],
+    "addtoSecureFilters": false,
+    "addWeaponPreset": false,
+    "weaponPresets":[],
+    "addtoTraders": false,
+    "traders": {
+      "TRUDY": {
+        "69f4b0096d199ce258e34f7c": {
+          "barterSettings": {
+            "loyalLevel": 2,
+            "unlimitedCount": true,
+            "stackObjectsCount": 99
+          },
+          "barters":[
+            {
+              "count": 160,
+              "_tpl": "MONEY_EUROS"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
