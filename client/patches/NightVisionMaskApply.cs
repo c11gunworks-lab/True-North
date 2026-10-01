@@ -1,6 +1,7 @@
 ﻿using System.Reflection;
 using BSG.CameraEffects;
 using C11_TN4_Client.Core;
+using C11_TN4_Client.compat;
 using HarmonyLib;
 using SPT.Reflection.Patching;
 
@@ -15,6 +16,7 @@ namespace C11_TN4_Client.patches
         private static bool PatchPrefix(NightVision __instance)
         {
             if (__instance.TextureMask == null) return true;
+            if (BorkelCompat.Active) return true;        // Borkel's renderer draws the mask
 
             //  If a custom half-mask active, we temporarily overwrite the 
             // base NightVision.Mask variable right before the game reads it.

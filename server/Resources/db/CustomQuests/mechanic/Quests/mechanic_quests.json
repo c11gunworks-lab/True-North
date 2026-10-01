@@ -54,7 +54,7 @@
                     },
                     "hasItemFromCategory": [],
                     "height": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     },
                     "magazineCapacity": {
@@ -75,11 +75,11 @@
                     ],
                     "value": 1,
                     "weight": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     },
                     "width": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     }
                 },
@@ -891,7 +891,7 @@
                     },
                     "hasItemFromCategory": [],
                     "height": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     },
                     "magazineCapacity": {
@@ -903,7 +903,7 @@
                         "value": 0
                     },
                     "recoil": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     },
                     "target": [
@@ -911,11 +911,11 @@
                     ],
                     "value": 1,
                     "weight": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     },
                     "width": {
-                        "compareMethod": "<=",
+                        "compareMethod": ">=",
                         "value": 0
                     }
                 },
@@ -1255,14 +1255,18 @@
                                 "resetOnSessionEnd": false,
                                 "savageRole": [
                                     "pmcBot",
-                                    "exUsec"
+                                    "exUsec",
+                                    "pmcBEAR",
+                                    "pmcUSEC"
                                 ],
                                 "target": "Any",
                                 "value": 1,
                                 "weapon": [
                                     "5a7ae0c351dfba0017554310",
                                     "5b1fa9b25acfc40018633c01",
-                                    "63088377b5cd696784087147"
+                                    "63088377b5cd696784087147",
+                                    "5b3b6e5d5acfc43398055011",
+                                    "6a1087fe49f3a17012a302ef"
                                 ],
                                 "weaponCaliber": [],
                                 "weaponModsExclusive": [],
@@ -1331,7 +1335,9 @@
                                 "weapon": [
                                     "5a7ae0c351dfba0017554310",
                                     "5b1fa9b25acfc40018633c01",
-                                    "63088377b5cd696784087147"
+                                    "63088377b5cd696784087147",
+                                    "5b3b6e5d5acfc43398055011",
+                                    "6a1087fe49f3a17012a302ef"
                                 ],
                                 "weaponCaliber": [],
                                 "weaponModsExclusive": [],

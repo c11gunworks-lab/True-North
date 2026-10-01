@@ -50,12 +50,12 @@
 
     "hallOfFameSlots": [
     ],
-    "addtoTraders": false,
+    "addtoTraders": true,
     "traders": {
       "TRUDY": {
         "69e29dd9a4fde7e582ff1883": {
           "barterSettings": {
-            "loyalLevel": 3,
+            "loyalLevel": 1,
             "unlimitedCount": true,
             "stackObjectsCount": 99
           },
@@ -120,12 +120,12 @@
 
     "hallOfFameSlots": [
     ],
-    "addtoTraders": false,
+    "addtoTraders": true,
     "traders": {
       "TRUDY": {
         "69e3d59004efea109dff1886": {
           "barterSettings": {
-            "loyalLevel": 4,
+            "loyalLevel": 1,
             "unlimitedCount": true,
             "stackObjectsCount": 99
           },
@@ -189,12 +189,12 @@
 
     "hallOfFameSlots": [
     ],
-    "addtoTraders": false,
+    "addtoTraders": true,
     "traders": {
       "TRUDY": {
         "69e3d5a21bfa564599ff1888": {
           "barterSettings": {
-            "loyalLevel": 4,
+            "loyalLevel": 1,
             "unlimitedCount": true,
             "stackObjectsCount": 99
           },
@@ -350,7 +350,7 @@
       "TRUDY": {
         "69e3d5b26dbd46625eff188c": {
           "barterSettings": {
-            "loyalLevel": 2,
+            "loyalLevel": 1,
             "unlimitedCount": true,
             "stackObjectsCount": 99
           },

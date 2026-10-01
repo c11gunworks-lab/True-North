@@ -15,6 +15,22 @@ namespace C11_TN4_Client.amp_arms
         private Vector3 _targetPos;
         private Vector3 _targetEul;
 
+        // Read by AmpArmsEditor: which settings this tuner drives, in the order
+        // PosX, PosY, PosZ, RotX, RotY, RotZ.
+        public MountMode            Mode    => _mode;
+        public ConfigEntry<float>[] Entries => _entries;
+        public HelmetSlotConfig     Config  => _cfg;
+
+        public string PartLabel => _mode switch
+        {
+            MountMode.Amp          => _cfg != null && _cfg.HasUnityArms ? "Unity Adapter" : "AMP Arms",
+            MountMode.AmpArms      => "RACLINK (on AMP)",
+            MountMode.Raclink      => "RAC Headset",
+            MountMode.RaclinkArms  => "RAC Headset Arms",
+            MountMode.UnityAmpArms => "AMP Arms (on Unity)",
+            _                      => _mode.ToString()
+        };
+
         public void Init(HelmetSlotConfig cfg, MountMode mode)
         {
             _cfg  = cfg;

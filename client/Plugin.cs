@@ -5,6 +5,7 @@ using BepInEx;
 using BepInEx.Configuration;
 using BepInEx.Logging;
 using C11_TN4_Client.amp_arms;
+using C11_TN4_Client.compat;
 using C11_TN4_Client.config;
 using C11_TN4_Client.Core;
 using C11_TN4_Client.nvg.chimera;
@@ -12,11 +13,13 @@ using C11_TN4_Client.nvg.dtnvs;
 using C11_TN4_Client.patches;
 using C11_TN4_Client.Patches;
 using SPT.Reflection.Patching;
+using HarmonyLib;
 using UnityEngine;
 
 namespace C11_TN4_Client
 {
-    [BepInDependency("com.c11.tn4", BepInDependency.DependencyFlags.SoftDependency)]
+    // Soft: load after Borkel's NVGs if it's installed, so BorkelCompat can find it
+    [BepInDependency(BorkelCompat.BorkelGuid, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin(PluginConstants.Guid, PluginConstants.Name, PluginConstants.Version)]
     public class C11Plugin : BaseUnityPlugin
     {
@@ -30,9 +33,18 @@ namespace C11_TN4_Client
         internal static ConfigEntry<KeyboardShortcut> RightPodFoldKey;
         internal static ConfigEntry<KeyboardShortcut> ResetRotationsKey;
         internal static ConfigEntry<float>            ManualFoldSpeed;
+        internal static ConfigEntry<bool>             PodFlipAnimation;
+        internal static ConfigEntry<bool>             PodFlipSound;
         internal static ConfigEntry<bool>             DebugLogging;
         internal static ConfigEntry<KeyboardShortcut> CopyConfigKey;
         internal static ConfigEntry<KeyboardShortcut> ScanMissingScriptsKey;
+
+        // ── AMP arms preview editor ───────────────────────────────────────────
+        internal static ConfigEntry<bool>             AmpPreviewTuning;
+        internal static ConfigEntry<KeyboardShortcut> AmpEditKey;
+        internal static ConfigEntry<KeyboardShortcut> AmpEditToolKey;
+        internal static ConfigEntry<KeyboardShortcut> AmpEditPartKey;
+        internal static ConfigEntry<float>            AmpEditGizmoSize;
 
         // ── Device/helmet registries ──────────────────────────────────────────
         internal static Dictionary<string, NvgDeviceProfile> Profiles      = new Dictionary<string, NvgDeviceProfile>();
@@ -66,6 +78,10 @@ namespace C11_TN4_Client
                 new ConfigDescription("Pod animation speed",
                     new AcceptableValueRange<float>(0.5f, 10f),
                     new ConfigurationManagerAttributes { IsAdvanced = true }));
+            PodFlipAnimation = Config.Bind("General", "Pod Flip Animation", true,
+                "Plays the character's reach-to-helmet animation when a pod key is pressed.");
+            PodFlipSound = Config.Bind("General", "Pod Flip Sound", true,
+                "Plays the NVG click when a pod key is pressed.");
             DebugLogging = Config.Bind("General", "Debug Logging", false,
                 new ConfigDescription("Verbose logging for adding new devices.",
                     null,
@@ -92,6 +108,22 @@ namespace C11_TN4_Client
                     null,
                     new ConfigurationManagerAttributes { IsAdvanced = true }));
 
+            AmpPreviewTuning = Config.Bind("AMP Arms Editor", "Tune Preview Models", true,
+                "Applies AMP arm positions to inspect / modding-window previews. Turn off to rule it out if a menu crashes.");
+            AmpEditKey = Config.Bind("AMP Arms Editor", "Edit Mode Key",
+                new KeyboardShortcut(KeyCode.F10),
+                "With a helmet open in an inspect or modding window, toggles mouse editing of its AMP parts.");
+            AmpEditToolKey = Config.Bind("AMP Arms Editor", "Move / Rotate Key",
+                new KeyboardShortcut(KeyCode.R),
+                "Switches the gizmo between move arrows and rotation rings.");
+            AmpEditPartKey = Config.Bind("AMP Arms Editor", "Next Part Key",
+                new KeyboardShortcut(KeyCode.T),
+                "Cycles through the AMP parts mounted on the helmet (not Tab - that closes the inventory).");
+            AmpEditGizmoSize = Config.Bind("AMP Arms Editor", "Gizmo Size", 90f,
+                new ConfigDescription("Length of the gizmo arrows / radius of the rings, in screen pixels.",
+                    new AcceptableValueRange<float>(30f, 300f),
+                    new ConfigurationManagerAttributes { IsAdvanced = true }));
+
             // ── Weapons using the no-mag forearm correction ───────────────────
             // Replace with the real template ID(s). Add one line per weapon.
             MagRotatorTemplateIds.Add("6a3fd390c90e2ddc932ee1c6");
@@ -109,12 +141,17 @@ namespace C11_TN4_Client
             EnablePatch(new NightVisionMaskApply());
             EnablePatch(new CurveRotatorPatch());
             EnablePatch(new AmpArmsEquipPatch());
+            EnablePatch(new AmpArmsPreviewPatch());
+
+            // Only does anything if Borkel's Realistic NVGs is installed
+            BorkelCompat.TryEnable(new Harmony(PluginConstants.Guid + ".borkelcompat"));
             DebugLog("[C11-TN4-Client] Patch setup finished.");
 
             // ── Forearm rotator ───────────────────────────────────────────────
             // Patch-free: polls Singleton<GameWorld>.MainPlayer, so there is no
             // obfuscated method name to resolve and nothing to break on update.
             gameObject.AddComponent<MagCheckForearmRotator>();
+            gameObject.AddComponent<AmpArmsEditor>();
             //gameObject.AddComponent<WeaponSwapLogger>();
             DebugLog("[C11-TN4-Client] MagCheckForearmRotator attached.");
             //gameObject.AddComponent<MissingScriptScanner>();

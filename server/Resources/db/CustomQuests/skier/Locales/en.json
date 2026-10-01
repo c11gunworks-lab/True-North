@@ -1,7 +1,7 @@
 {
     "2d8a81758a67da58a3a4ba77": "Eliminate 12 Scavs on Shoreline",
     "3d4480dc5bee4bbdbdfa2b34": "Eliminate 7 Rogues on Lighthouse",
-    "7a745d90927018bbb3b8e632": "Hand over 3 Gunpowder \"Hawk\" found in raid",
+    "7a745d90927018bbb3b8e632": "Hand over 3 packs of gunpowder (\"Kite\", \"Eagle\" or \"Hawk\") found in raid",
     "b001b128438cdd95a31948a7 acceptPlayerMessage": "I'll take it.",
     "b001b128438cdd95a31948a7 changeQuestMessageText": "Change of plans.",
     "b001b128438cdd95a31948a7 completePlayerMessage": "Done.",

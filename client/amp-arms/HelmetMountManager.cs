@@ -9,6 +9,16 @@ namespace C11_TN4_Client.amp_arms
         public CompoundItem HelmetItem;
         public HelmetSlotConfig Config;
 
+        /// <summary>True on inspect/modding-window preview models (see AmpArmsPreviewPatch).</summary>
+        public bool IsPreview;
+
+        /// <summary>Live preview managers, newest last. AmpArmsEditor edits these.</summary>
+        public static readonly System.Collections.Generic.List<HelmetMountManager> Previews =
+            new System.Collections.Generic.List<HelmetMountManager>();
+
+        public HelmetSlotTuner EquipTuner => _equipTuner;
+        public HelmetSlotTuner ArmsTuner  => _armsTuner;
+
         private HelmetSlotTuner _equipTuner;
         private HelmetSlotTuner _armsTuner;
 
@@ -22,7 +32,13 @@ namespace C11_TN4_Client.amp_arms
         {
             HelmetItem = item;
             Config = config;
+            if (IsPreview && !Previews.Contains(this)) Previews.Add(this);
             CheckMounts();
+        }
+
+        private void OnDestroy()
+        {
+            Previews.Remove(this);
         }
 
         private void Update()

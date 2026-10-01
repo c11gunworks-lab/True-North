@@ -11,8 +11,8 @@
         "description": "Gorka"
       }
       },
-      "topBundlePath": "gorka_top_reg.bundle",
-      "handsBundlePath": "gorka_hands_reg.bundle",
+      "topBundlePath": "clothing/gorka_top_reg.bundle",
+      "handsBundlePath": "clothing/gorka_hands_reg.bundle",
       "traderId": "TRUDY",
       "loyaltyLevel": 1,
       "profileLevel": 1,
@@ -34,8 +34,8 @@
         "description": "Gorka"
       }
     },
-    "topBundlePath": "gorka_top_nwu.bundle",
-    "handsBundlePath": "gorka_arms_nwu.bundle",
+    "topBundlePath": "clothing/gorka_top_nwu.bundle",
+    "handsBundlePath": "clothing/gorka_arms_nwu.bundle",
     "traderId": "TRUDY",
     "loyaltyLevel": 4,
     "profileLevel": 1,
@@ -57,7 +57,7 @@
         "description": "Gorka"
       }
     },
-    "bottomBundlePath": "gorka_bottom_reg.bundle",
+    "bottomBundlePath": "clothing/gorka_bottom_reg.bundle",
     "traderId": "TRUDY",
     "loyaltyLevel": 1,
     "profileLevel": 1,
@@ -78,7 +78,7 @@
         "description": "Tactical pants"
       }
     },
-    "bottomBundlePath": "gorka_bottom_strick.bundle",
+    "bottomBundlePath": "clothing/gorka_bottom_strick.bundle",
     "traderId": "TRUDY",
     "loyaltyLevel": 3,
     "profileLevel": 1,
@@ -99,7 +99,7 @@
         "description": "Tactical pants"
       }
     },
-    "bottomBundlePath": "crye_pants_sar.bundle",
+    "bottomBundlePath": "clothing/crye_pants_sar.bundle",
     "traderId": "TRUDY",
     "loyaltyLevel": 1,
     "profileLevel": 5,
@@ -120,7 +120,7 @@
         "description": "Tactical pants"
       }
     },
-    "bottomBundlePath": "crye_pants_cadpat.bundle",
+    "bottomBundlePath": "clothing/crye_pants_cadpat.bundle",
     "traderId": "TRUDY",
     "loyaltyLevel": 4,
     "profileLevel": 1,

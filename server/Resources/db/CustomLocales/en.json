@@ -1394,7 +1394,23 @@
   "6aa94e91fe7f6e1b02044a94 Description": "This gas block is identical to previous gas blocks but with the addition (removal) of no front sight post",
   "6aa94e91444ac822d132c938 Name": "Norinco QBZ-95-1 Gas Block",
   "6aa94e91444ac822d132c938 ShortName": " QBZ-95-1",
-  "6aa94e91444ac822d132c938 Description": "The  QBZ-95-1 gas block, with fixed front sight, modified to fit the Type 97 Gen 3"
+  "6aa94e91444ac822d132c938 Description": "The  QBZ-95-1 gas block, with fixed front sight, modified to fit the Type 97 Gen 3",
+  "6a063e879bc2ed754ca07e20 Name": "LBT-6094 plate carrier (CADPAT TW)",
+  "6a063e879bc2ed754ca07e20 ShortName": "6094 TW",
+  "6a063e7ab823859f6fa07e1c Name": "LBT-6094 plate carrier (CADPAT MT)",
+  "6a063e7ab823859f6fa07e1c ShortName": "6094 MT",
+  "6a063e5bb485e7090ea07e14 Name": "LBT-6094 plate carrier (AOR1)",
+  "6a063e5bb485e7090ea07e14 ShortName": "6094 AOR1",
+  "6a063e672f88f3143fa07e17 Name": "LBT-6094 plate carrier (AOR2)",
+  "6a063e672f88f3143fa07e17 ShortName": "6094 AOR2",
+  "6a063de26b5633b182a07e09 Name": "Crye Precision JPC 1.0 plate carrier (CADPAT TW)",
+  "6a063de26b5633b182a07e09 ShortName": "JPC TW",
+  "6a063e01eccd94bc8aa07e0d Name": "Crye Precision JPC 1.0 plate carrier (CADPAT MT)",
+  "6a063e01eccd94bc8aa07e0d ShortName": "JPC MT",
+  "6a063d7c7be336b8eaa07e04 Name": "Crye Precision JPC 1.0 plate carrier (AOR1)",
+  "6a063d7c7be336b8eaa07e04 ShortName": "JPC AOR1",
+  "6a063e1dbd0e87e04ca07e11 Name": "Crye Precision JPC 1.0 plate carrier (AOR2)",
+  "6a063e1dbd0e87e04ca07e11 ShortName": "JPC AOR2"
 }
 
 

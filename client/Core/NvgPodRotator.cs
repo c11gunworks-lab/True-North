@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using BSG.CameraEffects;
+using C11_TN4_Client.compat;
 using EFT.CameraControl;
 using UnityEngine;
 
@@ -32,6 +33,13 @@ namespace C11_TN4_Client.Core
         public static Texture     ActiveMask      = null;
         public static NightVision ManagedInstance = null;
 
+        /// <summary>Which pod the local player has flipped up (read by BorkelCompat).</summary>
+        public enum PodSide { None, Left, Right, Both }
+        public static PodSide StowedPod = PodSide.None;
+
+        /// <summary>Profile of the NVG the local player is wearing (read by BorkelCompat).</summary>
+        public static NvgDeviceProfile ActiveProfile;
+
         // NightVision caching
         private NightVision _nightVision;
 
@@ -46,9 +54,10 @@ namespace C11_TN4_Client.Core
         private Texture2D _maskRight;
         private bool      _masksBuilt;
 
-        // Reflection fields — resolved once at class load
-        private static readonly FieldInfo _material0Field = typeof(TextureMask)
-            .GetField("material_0", BindingFlags.NonPublic | BindingFlags.Instance);
+        // Reflection fields — resolved once at class load.
+        // Found by type, not name: 4.1 renamed obfuscated members like material_0 / float_0.
+        private static readonly FieldInfo _material0Field =
+            FindField(typeof(TextureMask), typeof(Material), "material_0");
 
         private static readonly MethodInfo _tryToEnable = typeof(TextureMask)
             .GetMethod("TryToEnable", BindingFlags.Public | BindingFlags.Instance);
@@ -60,13 +69,9 @@ namespace C11_TN4_Client.Core
             _baseRotator = rotator;
             _profile     = nvgProfile;
 
-            _float0Field = typeof(CurveRotator)
-                .GetField("float_0", BindingFlags.NonPublic | BindingFlags.Instance);
-
-            // Reflection by name won't show up as a build error, so say so loudly if it breaks.
-            // Without this field Update() bails out and the pods never move.
-            if (_float0Field == null)
-                C11Plugin.Log.LogWarning("[NvgPodRotator] CurveRotator.float_0 not found - pod animation disabled. Check the field name in 4.1.");
+            // The mount's animation progress (0..1, fed into AnimationCurve.Evaluate).
+            // Without it Update() bails out and the pods never move.
+            _float0Field = FindField(typeof(CurveRotator), typeof(float), "float_0", "_t");
 
             Transform searchRoot = string.IsNullOrEmpty(_profile.ChildNvgName)
                 ? transform
@@ -141,6 +146,10 @@ namespace C11_TN4_Client.Core
                 _rightOverride = false;
             }
 
+            // With Borkel's NVGs installed he owns the mask; touching it here (and re-enabling
+            // the vanilla TextureMask) is what flashed the base-game mask when pressing N.
+            if (BorkelCompat.Active) return;
+
             if (isOn && _nightVision != null)
             {
                 EnsureMasksBuilt();
@@ -160,6 +169,7 @@ namespace C11_TN4_Client.Core
             bool  mountDeployed = mountProgress > 0.05f;
 
             bool isLocal = IsLocalPlayerNVG();
+            if (isLocal) ActiveProfile = _profile;
 
             if (isLocal && mountDeployed)
             {
@@ -167,11 +177,18 @@ namespace C11_TN4_Client.Core
                 {
                     TogglePod(ref _leftOverride,  ref _manualTargetTLeft,  ref _manualTLeft);
                     TogglePod(ref _rightOverride, ref _manualTargetTRight, ref _manualTRight);
+                    PlayPodFlipFeedback();
                 }
                 else if (C11Plugin.LeftPodFoldKey.Value.IsDown())
+                {
                     TogglePod(ref _leftOverride, ref _manualTargetTLeft, ref _manualTLeft);
+                    PlayPodFlipFeedback();
+                }
                 else if (C11Plugin.RightPodFoldKey.Value.IsDown())
+                {
                     TogglePod(ref _rightOverride, ref _manualTargetTRight, ref _manualTRight);
+                    PlayPodFlipFeedback();
+                }
             }
 
             float tLeft  = Animate(ref _manualTLeft,  ref _manualTargetTLeft,  _leftOverride,  mountT);
@@ -188,6 +205,8 @@ namespace C11_TN4_Client.Core
             bool leftStowed  = targetLeft  < 0.5f;
             bool rightStowed = targetRight < 0.5f;
             bool bothStowed  = leftStowed && rightStowed;
+
+            StowedPod = bothStowed ? PodSide.Both : leftStowed ? PodSide.Left : rightStowed ? PodSide.Right : PodSide.None;
 
             if      (bothStowed  && !_wasFullyStowed) OnBothPodsStowed();
             else if (!bothStowed &&  _wasFullyStowed) OnPodsDeployed();
@@ -212,6 +231,23 @@ namespace C11_TN4_Client.Core
             float mountProgress = (float)_float0Field.GetValue(_baseRotator);
             bool  mountDeployed = mountProgress > 0.05f;
 
+            // Borkel's NVGs installed: he owns masking. We only switch the NVG on/off with the
+            // pods, and ApplySettings makes his renderer pick up On and the pod mask.
+            if (BorkelCompat.Active)
+            {
+                if (_wasFullyStowed && _nightVision.On)
+                {
+                    _nightVision.On = false;
+                    _nightVision.ApplySettings();
+                }
+                else if (!_wasFullyStowed && mountDeployed && !_nightVision.On)
+                {
+                    _nightVision.On = true;
+                    _nightVision.ApplySettings();
+                }
+                return;
+            }
+
             if (_wasFullyStowed)
             {
                 _nightVision.On = false;
@@ -228,16 +264,63 @@ namespace C11_TN4_Client.Core
             }
         }
 
+        private void OnDestroy()
+        {
+            if (ActiveProfile == _profile) { ActiveProfile = null; StowedPod = PodSide.None; }
+        }
+
+        // ── Reflection helper ─────────────────────────────────────────────────
+
+        /// <summary>
+        /// Finds a private instance field by type. Tries the old obfuscated name first,
+        /// then falls back to the only field of that type on the class. If there are
+        /// several, it picks none and logs them all, so the right one can be chosen.
+        /// </summary>
+        private static FieldInfo FindField(Type owner, Type fieldType, string oldName, params string[] knownNames)
+        {
+            const BindingFlags flags = BindingFlags.NonPublic | BindingFlags.Instance;
+
+            var byName = owner.GetField(oldName, flags);
+            if (byName != null && byName.FieldType == fieldType) return byName;
+
+            // Names confirmed from a 4.1 log (e.g. CurveRotator._t, beside _targetT)
+            foreach (var n in knownNames)
+            {
+                var f = owner.GetField(n, flags);
+                if (f != null && f.FieldType == fieldType) return f;
+            }
+
+            var candidates = new List<FieldInfo>();
+            foreach (var f in owner.GetFields(flags))
+                if (f.FieldType == fieldType) candidates.Add(f);
+
+            if (candidates.Count == 1)
+            {
+                C11Plugin.DebugLog($"[NvgPodRotator] {owner.Name}.{oldName} is now '{candidates[0].Name}'");
+                return candidates[0];
+            }
+
+            C11Plugin.Log.LogWarning($"[NvgPodRotator] {owner.Name}: {candidates.Count} private {fieldType.Name} fields, " +
+                                     $"can't tell which replaced {oldName}. All private fields:");
+            foreach (var f in owner.GetFields(flags))
+                C11Plugin.Log.LogWarning($"    {f.FieldType.Name} {f.Name}");
+            return null;
+        }
+
         // ── Pod state events ──────────────────────────────────────────────────
 
         private void OnBothPodsStowed()
         {
+            if (BorkelCompat.Active) { RefreshBorkel(); return; }
+
             NvgPodRotator.ActiveMask = null;
             C11Plugin.DebugLog("[NvgPodRotator] Both pods stowed → NVG OFF");
         }
 
         private void OnPodsDeployed()
         {
+            if (BorkelCompat.Active) { RefreshBorkel(); return; }
+
             EnsureNightVisionCached();
             if (_nightVision == null) return;
 
@@ -248,6 +331,8 @@ namespace C11_TN4_Client.Core
 
         private void OnSinglePodStowed(bool leftStowed)
         {
+            if (BorkelCompat.Active) { RefreshBorkel(); return; }
+
             EnsureNightVisionCached();
             if (_nightVision == null || _profile.SinglePodMask == null) return;
 
@@ -260,6 +345,8 @@ namespace C11_TN4_Client.Core
 
         private void OnSinglePodDeployed()
         {
+            if (BorkelCompat.Active) { RefreshBorkel(); return; }
+
             EnsureNightVisionCached();
             if (_nightVision == null) return;
 
@@ -270,8 +357,16 @@ namespace C11_TN4_Client.Core
 
         // ── Mask application ──────────────────────────────────────────────────
 
+        /// <summary>Borkel's renderer re-reads its mask in ApplySettings; BorkelCompat supplies ours.</summary>
+        private void RefreshBorkel()
+        {
+            EnsureNightVisionCached();
+            if (_nightVision != null && _nightVision.On) _nightVision.ApplySettings();
+        }
+
         private void ApplyCustomMask(Texture mask)
         {
+            if (BorkelCompat.Active) return;             // Borkel owns masking
             if (_nightVision == null || mask == null) return;
 
             NvgPodRotator.ManagedInstance = _nightVision;
@@ -289,6 +384,7 @@ namespace C11_TN4_Client.Core
             NvgPodRotator.ActiveMask      = null;
             NvgPodRotator.ManagedInstance = null;
 
+            if (BorkelCompat.Active) return;             // Borkel owns masking
             if (_nightVision == null) return;
             if (_originalAnvis != null) _nightVision.AnvisMaskTexture        = _originalAnvis;
             if (_originalBino  != null) _nightVision.BinocularMaskTexture    = _originalBino;
@@ -364,7 +460,7 @@ namespace C11_TN4_Client.Core
             catch (Exception) { return null; }
         }
 
-        private static Texture2D MakeReadableCopy(Texture source)
+        internal static Texture2D MakeReadableCopy(Texture source)
         {
             try
             {
@@ -383,7 +479,7 @@ namespace C11_TN4_Client.Core
             catch (Exception) { return null; }
         }
 
-        private static Texture2D GenerateShiftedMask(Texture2D src, int shiftX, string texName)
+        internal static Texture2D GenerateShiftedMask(Texture2D src, int shiftX, string texName)
         {
             int     w    = src.width;
             int     h    = src.height;
@@ -403,6 +499,33 @@ namespace C11_TN4_Client.Core
             result.SetPixels(dstP);
             result.Apply();
             return result;
+        }
+
+        // ── Pod flip feedback ─────────────────────────────────────────────────
+
+        // Player.SwitchHeadLightsAnimation() plays the hand-to-helmet reach on its own, without
+        // switching any device. ToggleGoggles() (the N key) would flip the whole mount instead.
+        // Player.PlayNightVisionSound() is the click N makes. Both found by the 4.1 probe;
+        // looked up by name so a future rename just disables the feedback instead of breaking.
+        private static readonly MethodInfo _headReachAnim =
+            typeof(EFT.Player).GetMethod("SwitchHeadLightsAnimation", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
+        private static readonly MethodInfo _nvgClickSound =
+            typeof(EFT.Player).GetMethod("PlayNightVisionSound", BindingFlags.Public | BindingFlags.NonPublic | BindingFlags.Instance, null, Type.EmptyTypes, null);
+
+        private static void PlayPodFlipFeedback()
+        {
+            var player = Comfort.Common.Singleton<EFT.GameWorld>.Instance?.MainPlayer;
+            if (player == null) return;
+
+            try
+            {
+                if (C11Plugin.PodFlipAnimation.Value) _headReachAnim?.Invoke(player, null);
+                if (C11Plugin.PodFlipSound.Value)     _nvgClickSound?.Invoke(player, null);
+            }
+            catch (Exception e)
+            {
+                C11Plugin.DebugLog($"[NvgPodRotator] Pod flip feedback failed: {e.InnerException?.Message ?? e.Message}");
+            }
         }
 
         // ── Utilities ─────────────────────────────────────────────────────────

@@ -4,9 +4,14 @@ namespace C11_TN4_Client.amp_arms
 {
     public static class AmpArmsConfig
     {
+        // Every colour of the AMP arms. The mount positions are stored per helmet, so all
+        // colours share them: tuning one colour moves every colour on that helmet.
         public static readonly string[] AmpArmsTemplateIds =
         {
-            "6917bfb870f5e5d6aea8165d",
+            "6917bfb870f5e5d6aea8165d",   // Ops-Core AMP Arms (Black)
+            "6a0e13a9b1f1333de13052c8",   // Ops-Core AMP Helmet Rail Mount Kit (Tan)
+            "6a0e13c5113b24a5bc3052cb",   // Ops-Core AMP Helmet Rail Mount Kit (Foliage Green)
+            "6a0e13e4d4c66b01c53052ce",   // Ops-Core AMP Helmet Rail Mount Kit (Ranger Green)
         };
 
         public static readonly string[] RaclinkTemplateIds =
