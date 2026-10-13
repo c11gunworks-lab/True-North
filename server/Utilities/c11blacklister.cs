@@ -88,7 +88,6 @@ public class C11Blacklister(
         return false;
     }
 
-    // 4.1: TemplateItem.Parent is a MongoId, not a string
     private bool IsChildOf(TemplateItem item, MongoId targetParentId, Dictionary<MongoId, TemplateItem> allItems)
     {
         if (item.Parent.IsEmpty) return false;

@@ -18,7 +18,7 @@ using UnityEngine;
 
 namespace C11_TN4_Client
 {
-    // Soft: load after Borkel's NVGs if it's installed, so BorkelCompat can find it
+    
     [BepInDependency(BorkelCompat.BorkelGuid, BepInDependency.DependencyFlags.SoftDependency)]
     [BepInPlugin(PluginConstants.Guid, PluginConstants.Name, PluginConstants.Version)]
     public class C11Plugin : BaseUnityPlugin
@@ -40,11 +40,18 @@ namespace C11_TN4_Client
         internal static ConfigEntry<KeyboardShortcut> ScanMissingScriptsKey;
 
         // ── AMP arms preview editor ───────────────────────────────────────────
+   
         internal static ConfigEntry<bool>             AmpPreviewTuning;
         internal static ConfigEntry<KeyboardShortcut> AmpEditKey;
         internal static ConfigEntry<KeyboardShortcut> AmpEditToolKey;
         internal static ConfigEntry<KeyboardShortcut> AmpEditPartKey;
         internal static ConfigEntry<float>            AmpEditGizmoSize;
+
+        private static readonly List<ConfigurationManagerAttributes> AmpEditorAttributes =
+            new List<ConfigurationManagerAttributes>();
+        private static AmpArmsPreviewPatch _ampPreviewPatch;
+        private static bool                _ampPreviewPatched;
+        private static AmpArmsEditor       _ampEditor;
 
         // ── Device/helmet registries ──────────────────────────────────────────
         internal static Dictionary<string, NvgDeviceProfile> Profiles      = new Dictionary<string, NvgDeviceProfile>();
@@ -108,24 +115,41 @@ namespace C11_TN4_Client
                     null,
                     new ConfigurationManagerAttributes { IsAdvanced = true }));
 
-            AmpPreviewTuning = Config.Bind("AMP Arms Editor", "Tune Preview Models", true,
-                "Applies AMP arm positions to inspect / modding-window previews. Turn off to rule it out if a menu crashes.");
+            // ── AMP arms preview editor ───────────────────────────────────────
+
+            AmpPreviewTuning = Config.Bind("AMP Arms Editor", "Tune Preview Models", false,
+                new ConfigDescription(
+                    "Enables the AMP arms preview editor: tunes AMP arm positions in inspect / modding-window " +
+                    "previews and turns on the edit keys below. Off removes the preview patch entirely. " +
+                    "Close and reopen F12 after changing this to show or hide the editor settings.",
+                    null,
+                    new ConfigurationManagerAttributes { IsAdvanced = true, Order = 100 }));
+
+            // The editor's own settings are only listed in F12 while the master switch is on.
             AmpEditKey = Config.Bind("AMP Arms Editor", "Edit Mode Key",
                 new KeyboardShortcut(KeyCode.F10),
-                "With a helmet open in an inspect or modding window, toggles mouse editing of its AMP parts.");
+                new ConfigDescription(
+                    "With a helmet open in an inspect or modding window, toggles mouse editing of its AMP parts.",
+                    null,
+                    AmpEditorAttr(90)));
             AmpEditToolKey = Config.Bind("AMP Arms Editor", "Move / Rotate Key",
                 new KeyboardShortcut(KeyCode.R),
-                "Switches the gizmo between move arrows and rotation rings.");
+                new ConfigDescription(
+                    "Switches the gizmo between move arrows and rotation rings.",
+                    null,
+                    AmpEditorAttr(80)));
             AmpEditPartKey = Config.Bind("AMP Arms Editor", "Next Part Key",
                 new KeyboardShortcut(KeyCode.T),
-                "Cycles through the AMP parts mounted on the helmet (not Tab - that closes the inventory).");
+                new ConfigDescription(
+                    "Cycles through the AMP parts mounted on the helmet (not Tab - that closes the inventory).",
+                    null,
+                    AmpEditorAttr(70)));
             AmpEditGizmoSize = Config.Bind("AMP Arms Editor", "Gizmo Size", 90f,
                 new ConfigDescription("Length of the gizmo arrows / radius of the rings, in screen pixels.",
                     new AcceptableValueRange<float>(30f, 300f),
-                    new ConfigurationManagerAttributes { IsAdvanced = true }));
+                    AmpEditorAttr(60)));
 
             // ── Weapons using the no-mag forearm correction ───────────────────
-            // Replace with the real template ID(s). Add one line per weapon.
             MagRotatorTemplateIds.Add("6a3fd390c90e2ddc932ee1c6");
 
             // ── Register NVG devices ──────────────────────────────────────────
@@ -136,26 +160,27 @@ namespace C11_TN4_Client
             AmpArmsConfig.Register();
 
             // ── Apply patches ─────────────────────────────────────────────────
-            // Each patch is enabled on its own, so one bad target (e.g. a member
-            // name that changed in 4.1) can't stop the others from applying.
+    
             EnablePatch(new NightVisionMaskApply());
             EnablePatch(new CurveRotatorPatch());
             EnablePatch(new AmpArmsEquipPatch());
-            EnablePatch(new AmpArmsPreviewPatch());
 
             // Only does anything if Borkel's Realistic NVGs is installed
             BorkelCompat.TryEnable(new Harmony(PluginConstants.Guid + ".borkelcompat"));
             DebugLog("[C11-TN4-Client] Patch setup finished.");
 
-            // ── Forearm rotator ───────────────────────────────────────────────
-            // Patch-free: polls Singleton<GameWorld>.MainPlayer, so there is no
-            // obfuscated method name to resolve and nothing to break on update.
+
             gameObject.AddComponent<MagCheckForearmRotator>();
-            gameObject.AddComponent<AmpArmsEditor>();
-            //gameObject.AddComponent<WeaponSwapLogger>();
             DebugLog("[C11-TN4-Client] MagCheckForearmRotator attached.");
+
+
+            _ampEditor = gameObject.AddComponent<AmpArmsEditor>();
+            SetAmpPreviewEnabled(AmpPreviewTuning.Value);
+            AmpPreviewTuning.SettingChanged += (_, __) => SetAmpPreviewEnabled(AmpPreviewTuning.Value);
+
+            //gameObject.AddComponent<WeaponSwapLogger>();
             //gameObject.AddComponent<MissingScriptScanner>();
-           // DebugLog("[C11-TN4-Client] MissingScriptScanner attached.");
+            // DebugLog("[C11-TN4-Client] MissingScriptScanner attached.");
         }
 
         private void Update()
@@ -168,6 +193,65 @@ namespace C11_TN4_Client
             }
             if (CopyConfigKey.Value.IsDown())
                 PrintHelmetConfigs();
+        }
+
+        // ── AMP arms preview editor switch ────────────────────────────────────
+
+        /// <summary>Advanced, and only listed in F12 while the master switch is on.</summary>
+        private static ConfigurationManagerAttributes AmpEditorAttr(int order)
+        {
+            var attr = new ConfigurationManagerAttributes
+            {
+                IsAdvanced = true,
+                Browsable  = AmpPreviewTuning.Value,
+                Order      = order
+            };
+            AmpEditorAttributes.Add(attr);
+            return attr;
+        }
+
+        /// <summary>
+        /// Turns the whole preview feature on or off: the Harmony patch, the
+        /// editor component, and the visibility of the editor's settings.
+        /// </summary>
+        private static void SetAmpPreviewEnabled(bool on)
+        {
+            // Patch: applied only while on, fully removed while off
+            if (on && !_ampPreviewPatched)
+            {
+                try
+                {
+                    _ampPreviewPatch = _ampPreviewPatch ?? new AmpArmsPreviewPatch();
+                    _ampPreviewPatch.Enable();
+                    _ampPreviewPatched = true;
+                    DebugLog("[C11-TN4-Client] AmpArmsPreviewPatch enabled.");
+                }
+                catch (Exception e)
+                {
+                    Log.LogError($"[C11-TN4-Client] Failed to enable AmpArmsPreviewPatch: {e}");
+                }
+            }
+            else if (!on && _ampPreviewPatched)
+            {
+                try
+                {
+                    _ampPreviewPatch.Disable();
+                    _ampPreviewPatched = false;
+                    DebugLog("[C11-TN4-Client] AmpArmsPreviewPatch disabled.");
+                }
+                catch (Exception e)
+                {
+                    Log.LogError($"[C11-TN4-Client] Failed to disable AmpArmsPreviewPatch: {e}");
+                }
+            }
+
+           
+            if (_ampEditor != null)
+                _ampEditor.enabled = on;
+
+            
+            foreach (var attr in AmpEditorAttributes)
+                attr.Browsable = on;
         }
 
         // ── Registration helpers ──────────────────────────────────────────────

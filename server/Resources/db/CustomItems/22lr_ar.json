@@ -14,13 +14,11 @@
       "Height": 2,
       "Weight": 0.25,
       "ExtraSizeDown": 1,
-      "magAnimationIndex":0,
-      "CanFast":true,
-      "CanPutIntoDuringTheRaid":true,
-
+      "magAnimationIndex": 0,
+      "CanFast": true,
+      "CanPutIntoDuringTheRaid": true,
       "Ergonomics": 0,
-      "VisibleAmmoRangesString":"1-3",
-
+      "VisibleAmmoRangesString": "1-3",
       "Slots": [],
       "Grids": [],
       "Cartridges": [
@@ -41,7 +39,6 @@
                   "2b6a06054693ed3fa9c47542",
                   "b972903f30708cd41c8265ba",
                   "e8e8cdc108d343708aa07b2d"
-                  
                 ]
               }
             ]
@@ -299,7 +296,7 @@
         }
       ],
       "Grids": [],
-      "ConflictingItems":[],
+      "ConflictingItems": [],
       "Chambers": [
         {
           "_id": "69e91126583645a9bdff1892",
@@ -347,6 +344,95 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "5b6d2d7433335f66a7d77580",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "AR-15 .22 LR civilian",
+        "_parent": "b69589e1ec94817981289e12",
+        "_items": [
+          {
+            "_id": "b69589e1ec94817981289e12",
+            "_tpl": "69e90fbb0655531529ff1891"
+          },
+          {
+            "_id": "751d1b87b5e698946849b2f6",
+            "_tpl": "55802f5d4bdc2dac148b458f",
+            "parentId": "b69589e1ec94817981289e12",
+            "slotId": "mod_pistol_grip"
+          },
+          {
+            "_id": "9fe81177fe2904deb740a79b",
+            "_tpl": "69e90ce8cbaf23280dff188f",
+            "parentId": "b69589e1ec94817981289e12",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "cf05376141bddcc9bbd9fd58",
+            "_tpl": "55d355e64bdc2d962f8b4569",
+            "parentId": "b69589e1ec94817981289e12",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "c7a003e7fc5193e25ce57a10",
+            "_tpl": "69e9185e551374ea6fff189a",
+            "parentId": "cf05376141bddcc9bbd9fd58",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "97d4683f306ffa7423b9a803",
+            "_tpl": "544a38634bdc2d58388b4568",
+            "parentId": "c7a003e7fc5193e25ce57a10",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "375c6e5a14c649f7832d18a0",
+            "_tpl": "5ae30e795acfc408fb139a0b",
+            "parentId": "c7a003e7fc5193e25ce57a10",
+            "slotId": "mod_gas_block"
+          },
+          {
+            "_id": "44a30c6dadfc083a8f41a6fc",
+            "_tpl": "5c78f2792e221600106f4683",
+            "parentId": "cf05376141bddcc9bbd9fd58",
+            "slotId": "mod_handguard"
+          },
+          {
+            "_id": "826e1444014a3a0e17472e9a",
+            "_tpl": "5bc09a18d4351e003562b68e",
+            "parentId": "cf05376141bddcc9bbd9fd58",
+            "slotId": "mod_sight_rear"
+          },
+          {
+            "_id": "465b653a12c4436731c5a06f",
+            "_tpl": "570fd721d2720bc5458b4596",
+            "parentId": "cf05376141bddcc9bbd9fd58",
+            "slotId": "mod_scope"
+          },
+          {
+            "_id": "d89dddcb2fb261c87d3a4290",
+            "_tpl": "5649be884bdc2d79388b4577",
+            "parentId": "b69589e1ec94817981289e12",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "ca883ae54cd06909608c3389",
+            "_tpl": "56eabf3bd2720b75698b4569",
+            "parentId": "d89dddcb2fb261c87d3a4290",
+            "slotId": "mod_stock_000"
+          },
+          {
+            "_id": "92e02f942c348d09ed2dbe43",
+            "_tpl": "55d44fd14bdc2d962f8b456e",
+            "parentId": "b69589e1ec94817981289e12",
+            "slotId": "mod_charge"
+          }
+        ],
+        "_encyclopedia": "69e90fbb0655531529ff1891"
+      }
+    ],
     "addtoTraders": false,
     "traders": {
       "SKIER": {
@@ -384,7 +470,7 @@
       "HeatFactor": 0.55,
       "CoolFactor": 1.4,
       "Recoil": -1,
-      "ConflictingItems":[
+      "ConflictingItems": [
         "5447a9cd4bdc2dbd208b4567",
         "5c07c60e0db834002330051f",
         "5d43021ca4b9362eab4b5e25",
@@ -445,7 +531,24 @@
           "_proto": "55d30c4c4bdc2db4468b457e",
           "_required": false
         },
-        
+        {
+          "_id": "be4d03b7db4f5d2161cac126",
+          "_mergeSlotWithChildren": false,
+          "_name": "mod_gas_block",
+          "_parent": "69e9185e551374ea6fff189a",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "5ae30e795acfc408fb139a0b"
+                ],
+                "Shift": 0
+              }
+            ]
+          },
+          "_proto": "55d30c4c4bdc2db4468b457e",
+          "_required": false
+        },
         {
           "_id": "69e918c154583a1c4dff189e",
           "_mergeSlotWithChildren": false,

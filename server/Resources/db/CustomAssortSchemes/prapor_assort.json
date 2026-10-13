@@ -220,6 +220,66 @@
           "UnlimitedCount": true,
           "BuyRestrictionMax": 1
         }
+      },
+      {
+        "_id": "4a3e2b633c6f087807d1d7b5",
+        "_tpl": "6a3fd390c90e2ddc932ee1c6",
+        "parentId": "hideout",
+        "slotId": "hideout",
+        "upd": {
+          "StackObjectsCount": 1,
+          "UnlimitedCount": false,
+          "Repairable": {
+            "Durability": 100,
+            "MaxDurability": 100
+          },
+          "FireMode": {
+            "FireMode": "single"
+          },
+          "BuyRestrictionMax": 1
+        }
+      },
+      {
+        "_id": "42595faa00519c85b8fbdac3",
+        "_tpl": "5649ade84bdc2d1b2b8b4587",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_pistol_grip"
+      },
+      {
+        "_id": "c047244ad1f912b18b4a48ca",
+        "_tpl": "5ab626e4d8ce87272e4c6e43",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_stock"
+      },
+      {
+        "_id": "f7f3677d7c87f1e41a7cc6b3",
+        "_tpl": "6a3fd799319444a8a12ee1d6",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_magazine"
+      },
+      {
+        "_id": "007532eaffbc41382e40f9d5",
+        "_tpl": "6a3fd91f0f16d9ab882ee1dc",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_muzzle"
+      },
+      {
+        "_id": "756418a6795c718775990792",
+        "_tpl": "6a3fd623ab897b4ad92ee1d0",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_reciever"
+      },
+      {
+        "_id": "f81d7e4b391520476b24d7b2",
+        "_tpl": "5649b0544bdc2d1b2b8b458a",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_sight_rear"
+      },
+      {
+        "_id": "49f863ac1f48b7731c789bac",
+        "_tpl": "6a3fd66af0f63c5a472ee1d2",
+        "parentId": "4a3e2b633c6f087807d1d7b5",
+        "slotId": "mod_gas_block"
       }
     ],
     "barter_scheme": {
@@ -294,6 +354,14 @@
             "_tpl": "569668774bdc2da2298b4568"
           }
         ]
+      ],
+      "4a3e2b633c6f087807d1d7b5": [
+        [
+          {
+            "count": 48500,
+            "_tpl": "5449016a4bdc2d6f028b456f"
+          }
+        ]
       ]
     },
     "loyal_level_items": {
@@ -305,7 +373,8 @@
       "785cea19a244fc668a3da84c": 1,
       "0f97a6468b411c0213a006d1": 1,
       "6446853122142c95a89a55eb": 3,
-      "0bdb5ebdd8eccf55c314bffd": 3
+      "0bdb5ebdd8eccf55c314bffd": 3,
+      "4a3e2b633c6f087807d1d7b5": 3
     }
   }
 }

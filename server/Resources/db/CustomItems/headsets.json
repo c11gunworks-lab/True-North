@@ -143,7 +143,7 @@
     },
     "locales": {
       "en": {
-        "Name": "Peltor ComTac V headset (Multicam)",
+        "name": "Peltor ComTac V headset (Multicam)",
         "shortName": "Comtac multicam",
         "description": "A communication headset equipped with a microphone and omnidirectional high-fidelity speakers that are optimized for voice communication and capable of picking up sounds with high sensitivity. Has had it's headband removed. Manufactured by 3M Peltor. Coyote color version."
       }

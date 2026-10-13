@@ -1,5 +1,4 @@
 ﻿{
-
   "69b5c78205424d948b96044a": {
     "itemTplToClone": "574d967124597745970e7c94",
     "parentId": "5447b5fc4bdc2d87278b4567",
@@ -304,7 +303,6 @@
         "y": 0.33,
         "z": 0.95
       },
-
       "Velocity": 0,
       "WeaponRecoilSettings": {
         "Enable": true,
@@ -468,11 +466,70 @@
       }
     ],
     "addtoSecureFilters": false,
-    "addWeaponPreset": false,
+    "addWeaponPreset": true,
     "weaponPresets": [
-
-
-
+      {
+        "_id": "b203e1116560dca0e72733cc",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Norinco SKS-D standard",
+        "_parent": "9928ec3d91b0cedd4e1abe04",
+        "_items": [
+          {
+            "_id": "9928ec3d91b0cedd4e1abe04",
+            "_tpl": "69b5c78205424d948b96044a"
+          },
+          {
+            "_id": "193a7fc1328ac63d93480b00",
+            "_tpl": "574dad8024597745964bf05c",
+            "parentId": "9928ec3d91b0cedd4e1abe04",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "ad52d6b157b2a626a2dd280d",
+            "_tpl": "634f02331f9f536910079b51",
+            "parentId": "9928ec3d91b0cedd4e1abe04",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "dba9474d8e45aae7dad7dfac",
+            "_tpl": "634f04d82e5def262d0b30c6",
+            "parentId": "ad52d6b157b2a626a2dd280d",
+            "slotId": "mod_mount_000"
+          },
+          {
+            "_id": "fad0c9027e986798dff31fe0",
+            "_tpl": "634f02d7517ccc8a960fc744",
+            "parentId": "dba9474d8e45aae7dad7dfac",
+            "slotId": "mod_gas_block"
+          },
+          {
+            "_id": "c9e7d0313b9db07ddf6cbecf",
+            "_tpl": "634f08a21f9f536910079b5a",
+            "parentId": "fad0c9027e986798dff31fe0",
+            "slotId": "mod_mount_000"
+          },
+          {
+            "_id": "9f04d1b53efdc0b54809fd05",
+            "_tpl": "574db213245977459a2f3f5d",
+            "parentId": "dba9474d8e45aae7dad7dfac",
+            "slotId": "mod_sight_rear"
+          },
+          {
+            "_id": "701e5dd9a2c048cf246afbd4",
+            "_tpl": "59d625f086f774661516605d",
+            "parentId": "9928ec3d91b0cedd4e1abe04",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "1998a4057cf67218cb17cc01",
+            "_tpl": "634f05ca517ccc8a960fc748",
+            "parentId": "9928ec3d91b0cedd4e1abe04",
+            "slotId": "mod_reciever"
+          }
+        ],
+        "_encyclopedia": "69b5c78205424d948b96044a"
+      }
     ],
     "masterySections": [
       {

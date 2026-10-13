@@ -27,7 +27,6 @@
         "69a9e0fb79fe0b0af4eee874",
         "cd7948f6e0e8b48b2c4451c9",
         "6a064937080ae01368ef9523"
-        
       ],
       "CanPutIntoDuringTheRaid": true,
       "CantRemoveFromSlotsDuringRaid": [],
@@ -119,7 +118,7 @@
             "filters": [
               {
                 "Filter": [
-                 "694d4afc492b8a3abf40f8c5"
+                  "694d4afc492b8a3abf40f8c5"
                 ],
                 "Shift": 0
               }
@@ -191,7 +190,6 @@
                   "6621455e3aceea9e2b0b01e7",
                   "664301213dd83ddae20dda18",
                   "694d576f3a480ae8db40f8d0"
-                  
                 ],
                 "Shift": 0
               }
@@ -227,7 +225,7 @@
             "filters": [
               {
                 "Filter": [
-"694d5067acb165798440f8cd",
+                  "694d5067acb165798440f8cd",
                   "694d7332a9f57254a140f8d2"
                 ],
                 "Shift": 0
@@ -237,7 +235,6 @@
           "_proto": "55d30c4c4bdc2db4468b457e",
           "_required": true
         }
-       
       ]
     },
     "locales": {
@@ -254,16 +251,63 @@
     "addtoModSlots": false,
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "42ccf6b223ccb587a0e41fe9",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ruger 22/45 standard",
+        "_parent": "b190512f8f98accbc393e785",
+        "_items": [
+          {
+            "_id": "b190512f8f98accbc393e785",
+            "_tpl": "694c80fa9b0201378540f8bd"
+          },
+          {
+            "_id": "b6a6874ed2db8eb94e6c3ed4",
+            "_tpl": "694d4afc492b8a3abf40f8c5",
+            "parentId": "b190512f8f98accbc393e785",
+            "slotId": "mod_reciever.001"
+          },
+          {
+            "_id": "5507102ca6092d314ba69d9f",
+            "_tpl": "694d8611a9a00cec0d40f8d5",
+            "parentId": "b190512f8f98accbc393e785",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "85c7cae3f7eea2348e07610c",
+            "_tpl": "694d7332a9f57254a140f8d2",
+            "parentId": "b190512f8f98accbc393e785",
+            "slotId": "mod_pistolgrip"
+          },
+          {
+            "_id": "3d6667f0b835cb8f8a681c77",
+            "_tpl": "694d4ff2984bc5d85740f8cc",
+            "parentId": "b190512f8f98accbc393e785",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "cdf332ad8238a6423be2c9db",
+            "_tpl": "694d576f3a480ae8db40f8d0",
+            "parentId": "b190512f8f98accbc393e785",
+            "slotId": "mod_muzzle"
+          }
+        ],
+        "_encyclopedia": "694c80fa9b0201378540f8bd"
+      }
+    ],
     "addtoTraders": false,
     "traders": {
       "TRUDY": {
@@ -283,7 +327,6 @@
       }
     }
   },
-  
   "694d4afc492b8a3abf40f8c5": {
     "itemTplToClone": "6374a822e629013b9c0645c8",
     "parentId": "55818a304bdc2db5418b457d",
@@ -308,7 +351,6 @@
       "Width": 2,
       "Grids": [],
       "Slots": [
-       
         {
           "_id": "694d4e1c0eafc19a0840f8c6",
           "_mergeSlotWithChildren": false,
@@ -371,8 +413,6 @@
           "_required": false
         }
       ]
-
-
     },
     "locales": {
       "en": {
@@ -388,13 +428,13 @@
     "addtoModSlots": false,
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -428,12 +468,12 @@
         "rcid": ""
       },
       "ExaminedByDefault": true,
-      "CanSellOnRagfair":true,
+      "CanSellOnRagfair": true,
       "AnimationVariantsNumber": 0,
       "BackgroundColor": "blue",
       "CanPutIntoDuringTheRaid": true,
       "CanFast": true,
-      "CheckTimeModifier":-15,
+      "CheckTimeModifier": -15,
       "Cartridges": [
         {
           "_id": "694d4fec9d0be484e840f8cb",
@@ -459,7 +499,6 @@
           "_proto": "5748538b2459770af276a261"
         }
       ],
-
       "Ergonomics": 1,
       "Grids": [],
       "Height": 1,
@@ -485,13 +524,13 @@
     "addtoModSlots": false,
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -514,7 +553,6 @@
       }
     }
   },
-
   "694d5067acb165798440f8cd": {
     "itemTplToClone": "6374a7e7417239a7bf00f042",
     "parentId": "55818a684bdc2ddd698b456d",
@@ -549,13 +587,13 @@
     "addtoModSlots": false,
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -589,7 +627,7 @@
       },
       "Accuracy": 0,
       "BackgroundColor": "blue",
-      "UniqueAnimationModID":10,
+      "UniqueAnimationModID": 10,
       "Ergonomics": 12,
       "Height": 1,
       "RaidModdable": false,
@@ -613,13 +651,13 @@
     "addtoModSlots": false,
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -642,7 +680,6 @@
       }
     }
   },
- 
   "694d576f3a480ae8db40f8d0": {
     "itemTplToClone": "544a38634bdc2d58388b4568",
     "parentId": "550aa4dd4bdc2dc9348b4569",
@@ -655,11 +692,11 @@
       "Accuracy": 0,
       "BackgroundColor": "blue",
       "Ergonomics": 1,
-      "CoolFactor":1,
-      "HeatFactor":1,
-      "Velocity":0,
-      "muzzleModType":"muzzleCombo",
-      "Loudness":0,
+      "CoolFactor": 1,
+      "HeatFactor": 1,
+      "Velocity": 0,
+      "muzzleModType": "muzzleCombo",
+      "Loudness": 0,
       "Height": 1,
       "Recoil": 0,
       "Weight": 0.01,
@@ -684,13 +721,13 @@
     ],
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -744,16 +781,15 @@
     "addtoBots": true,
     "addtoSpecialSlots": false,
     "addtoModSlots": false,
-    
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
-          {
+      {
         "containerName": "LOOTCONTAINER_DEAD_SCAV",
         "probability": 150
       },
       {
-      "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
-      "probability": 250
+        "containerName": "LOOTCONTAINER_WEAPON_BOX_4X4",
+        "probability": 250
       }
     ],
     "addtoSecureFilters": true,
@@ -776,5 +812,4 @@
       }
     }
   }
-
 }

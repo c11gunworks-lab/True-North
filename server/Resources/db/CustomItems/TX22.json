@@ -114,9 +114,7 @@
             "filters": [
               {
                 "Filter": [
-
                   "6a087ba45d26d7b855a07e31"
-                  
                 ],
                 "Shift": 0
               }
@@ -135,7 +133,6 @@
               {
                 "Filter": [
                   "6a087bc7d8359edb8ca07e33"
-                  
                 ],
                 "Shift": 0
               }
@@ -218,6 +215,53 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "fa88e8edb7f58c3f7adee403",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Taurus TX22 standard",
+        "_parent": "fd99075c6c557f68191a608a",
+        "_items": [
+          {
+            "_id": "fd99075c6c557f68191a608a",
+            "_tpl": "6a07ad0150cdb50acfa07e25"
+          },
+          {
+            "_id": "00bab51b5b24aedcb5efc9e2",
+            "_tpl": "6a087ba45d26d7b855a07e31",
+            "parentId": "fd99075c6c557f68191a608a",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "7efad57305e29bcd6796881a",
+            "_tpl": "6a087bc7d8359edb8ca07e33",
+            "parentId": "fd99075c6c557f68191a608a",
+            "slotId": "mod_reciever"
+          },
+          {
+            "_id": "979ff3a0085c60a05acd9dca",
+            "_tpl": "6a087c22b46605c794a07e39",
+            "parentId": "7efad57305e29bcd6796881a",
+            "slotId": "mod_sight_rear_000"
+          },
+          {
+            "_id": "e1dad1a695274e36702d3a77",
+            "_tpl": "6a087c071b11a253cfa07e37",
+            "parentId": "7efad57305e29bcd6796881a",
+            "slotId": "mod_scope"
+          },
+          {
+            "_id": "e3ce79b9620b287dc546e8fd",
+            "_tpl": "6a07ad4c8baf651678a07e2b",
+            "parentId": "fd99075c6c557f68191a608a",
+            "slotId": "mod_magazine"
+          }
+        ],
+        "_encyclopedia": "6a07ad0150cdb50acfa07e25"
+      }
+    ],
     "addtoTraders": false,
     "traders": {
       "SKIER": {
@@ -246,9 +290,9 @@
         "path": "taurus/tx22-barrel.bundle",
         "rcid": ""
       },
-      "CenterOfImpact": 0.20,
+      "CenterOfImpact": 0.2,
       "CoolFactor": 1.5,
-      "DeviationCurve": 2.20,
+      "DeviationCurve": 2.2,
       "DeviationMax": 9,
       "HeatFactor": 0.95,
       "ExaminedByDefault": true,
@@ -294,7 +338,6 @@
       }
     }
   },
-
   "6a087bc7d8359edb8ca07e33": {
     "itemTplToClone": "5a71e22f8dc32e00094b97f4",
     "parentId": "55818a304bdc2db5418b457d",
@@ -391,7 +434,6 @@
     },
     "staticLootContainers": []
   },
-
   "6a087c22b46605c794a07e39": {
     "itemTplToClone": "5a6f5d528dc32e00094b97d9",
     "parentId": "55818ac54bdc2d5b648b456e",
@@ -449,7 +491,6 @@
       }
     }
   },
-
   "6a087c071b11a253cfa07e37": {
     "itemTplToClone": "5a71e1868dc32e00094b97f3",
     "parentId": "5a74651486f7744e73386dd1",
@@ -465,9 +506,7 @@
       },
       "Weight": 0.002,
       "Width": 1,
-      "Slots": [
-       
-      ]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -509,7 +548,6 @@
       }
     }
   },
-
   "6a07ad4c8baf651678a07e2b": {
     "itemTplToClone": "5a718da68dc32e000d46d264",
     "parentId": "5448bc234bdc2d3c308b4569",
@@ -587,7 +625,6 @@
     },
     "staticLootContainers": []
   },
-
   "6a087b73a5a3f58940a07e2e": {
     "itemTplToClone": "5a7ad2e851dfba0016153692",
     "parentId": "5448bc234bdc2d3c308b4569",
@@ -601,8 +638,7 @@
       "LoadUnloadModifier": -15,
       "MalfunctionChance": 0.25,
       "Weight": 0.1,
-      "ExtraSizeDown":1,
-
+      "ExtraSizeDown": 1,
       "Ergonomics": -4,
       "magAnimationIndex": 2,
       "VisibleAmmoRangesString": "1-34",

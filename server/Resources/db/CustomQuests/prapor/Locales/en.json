@@ -23,5 +23,17 @@
     "a17953cd9929a8f99f10104c note": "",
     "a17953cd9929a8f99f10104c startedMessageText": "Respect the weapon first. Then you may ruin it with rails.",
     "a17953cd9929a8f99f10104c successMessageText": "Ha! You see? The old girl still bites. Take the kit, dress her up however you like - she will not mind.",
-    "ed0884ccb385a2944cf5ee30": "Eliminate 10 Scavs on Customs using Russian optics"
+    "ed0884ccb385a2944cf5ee30": "Eliminate 10 Scavs on Customs using Russian optics",
+    "48172ee9574eb40f06a4c7c3 name": "Militsiya Surplus",
+    "48172ee9574eb40f06a4c7c3 description": "Privyet, warrior. When the MVD rearmed, the old PP-19 Bizons were supposed to be melted down. Supposed to be. I have a crate of them from a police depot that somebody forgot to close - helical magazine, sixty-four rounds of 9x18, folds up small enough to hide under a coat. But I do not hand a sixty-four round gun to a man who has never fired a Makarov cartridge in anger. Kill scavengers with 9x18, and bring me weapon parts from the field so my boys can keep the old ones running.",
+    "48172ee9574eb40f06a4c7c3 startedMessageText": "9x18 only. Makarov, Kedr, Stechkin - the cartridge is the lesson.",
+    "48172ee9574eb40f06a4c7c3 successMessageText": "Good. You understand the little cartridge now, so you will understand sixty-four of them. The Bizons are on my shelf. Do not tell the MVD.",
+    "48172ee9574eb40f06a4c7c3 failMessageText": "That's a shame.",
+    "48172ee9574eb40f06a4c7c3 acceptPlayerMessage": "I'll take it.",
+    "48172ee9574eb40f06a4c7c3 declinePlayerMessage": "Not right now.",
+    "48172ee9574eb40f06a4c7c3 completePlayerMessage": "Done.",
+    "48172ee9574eb40f06a4c7c3 changeQuestMessageText": "Change of plans.",
+    "48172ee9574eb40f06a4c7c3 note": "",
+    "28ba2de648525e4708e54765": "Eliminate 12 Scavs using a 9x18 weapon",
+    "a68fd16f5951a2dcfeb11afd": "Hand over 3 Weapon parts found in raid"
 }

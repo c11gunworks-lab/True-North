@@ -16,6 +16,9 @@ namespace C11_TN4_Client.Patches
     /// (seen in the stack trace from the PPSh preview crash), so this attaches a
     /// HelmetMountManager to whatever that returns when it's one of the registered helmets.
     /// Both managers read the same F12 settings, so a change in one shows in the other.
+    ///
+    /// Not enabled at startup: C11Plugin.SetAmpPreviewEnabled applies and removes it from the
+    /// advanced "Tune Preview Models" switch.
     /// </summary>
     internal class AmpArmsPreviewPatch : ModulePatch
     {
@@ -38,7 +41,8 @@ namespace C11_TN4_Client.Patches
         [PatchPostfix]
         private static void PatchPostfix(object __result, Item __0)
         {
-            // Off switch: lets this be ruled in/out of a crash without rebuilding
+            // Backstop for the master switch: the patch is normally removed when the
+            // switch is off, but if unpatching ever fails this keeps it inert.
             if (!C11Plugin.AmpPreviewTuning.Value) return;
 
             try

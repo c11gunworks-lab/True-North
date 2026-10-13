@@ -200,6 +200,30 @@
                             "upd": {
                                 "StackObjectsCount": 1
                             }
+                        },
+                        {
+                            "_id": "642eff4cb1c5e314358041c5",
+                            "_tpl": "6a3ee36d7f4f2267b52ee1bd",
+                            "parentId": "2dde5e0c2a277ce9a06311ef",
+                            "slotId": "mod_barrel"
+                        },
+                        {
+                            "_id": "5699e8954dd109e7d1d83511",
+                            "_tpl": "6a3ee3c2f2b7441c862ee1c5",
+                            "parentId": "2dde5e0c2a277ce9a06311ef",
+                            "slotId": "mod_stock"
+                        },
+                        {
+                            "_id": "da9c93419eb8acd9341d3b4a",
+                            "_tpl": "6a3ee3a1f2b7441c862ee1c3",
+                            "parentId": "2dde5e0c2a277ce9a06311ef",
+                            "slotId": "mod_charge"
+                        },
+                        {
+                            "_id": "7ebbb5142928c6bf1282c84c",
+                            "_tpl": "6a3ee211ef62af0e542ee1b1",
+                            "parentId": "2dde5e0c2a277ce9a06311ef",
+                            "slotId": "mod_magazine"
                         }
                     ],
                     "loyaltyLevel": 1,

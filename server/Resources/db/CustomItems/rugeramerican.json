@@ -54,7 +54,7 @@
         }
       ],
       "CompactHandling": false,
-      "ConflictingItems":[],
+      "ConflictingItems": [],
       "CoolFactorGun": 4.608,
       "CoolFactorGunMods": 1,
       "DeviationCurve": 1,
@@ -103,14 +103,14 @@
       "SightingRange": 100,
       "SingleFireRate": 450,
       "SizeReduceRight": 0,
-      "Slots":[
+      "Slots": [
         {
           "_id": "6a04ff69b216042992fa7717",
           "_mergeSlotWithChildren": false,
           "_name": "mod_magazine",
           "_parent": "6a04fee067a51785d1fa7715",
           "_props": {
-            "filters":[
+            "filters": [
               {
                 "AnimationIndex": 0,
                 "Filter": [
@@ -214,7 +214,7 @@
     "addtoBots": true,
     "addtoSpecialSlots": false,
     "addtoModSlots": false,
-    "modSlot":[],
+    "modSlot": [],
     "addtoStaticLootContainers": true,
     "staticLootContainers": [
       {
@@ -227,6 +227,53 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "25fc0e0605776b108d05b60b",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ruger American Rimfire Target standard",
+        "_parent": "14f6df47d8522b70af5f91da",
+        "_items": [
+          {
+            "_id": "14f6df47d8522b70af5f91da",
+            "_tpl": "6a04fee067a51785d1fa7715"
+          },
+          {
+            "_id": "3cf1f8344df686953eb8b856",
+            "_tpl": "6a05028e51f698d388fa7725",
+            "parentId": "14f6df47d8522b70af5f91da",
+            "slotId": "mod_magazine"
+          },
+          {
+            "_id": "2c0e325f80ee00dae78571a3",
+            "_tpl": "6a0500a28dbfd63b56fa771e",
+            "parentId": "14f6df47d8522b70af5f91da",
+            "slotId": "mod_stock"
+          },
+          {
+            "_id": "66150cff47d3e557ee696ba2",
+            "_tpl": "6a050039f8e3a6eee0fa771b",
+            "parentId": "14f6df47d8522b70af5f91da",
+            "slotId": "mod_barrel"
+          },
+          {
+            "_id": "c1381a2b931a1a42caca1126",
+            "_tpl": "6a0501926af3548d25fa771f",
+            "parentId": "66150cff47d3e557ee696ba2",
+            "slotId": "mod_muzzle"
+          },
+          {
+            "_id": "7303c9b8078386955fe6a4e6",
+            "_tpl": "6a05019ca48b70cedcfa7720",
+            "parentId": "14f6df47d8522b70af5f91da",
+            "slotId": "mod_mount"
+          }
+        ],
+        "_encyclopedia": "6a04fee067a51785d1fa7715"
+      }
+    ],
     "addtoTraders": false,
     "traders": {
       "PEACEKEEPER": {
@@ -265,16 +312,16 @@
       "ExtraSizeLeft": 1,
       "Velocity": 0.015,
       "Recoil": -10,
-      "Slots":[
+      "Slots": [
         {
           "_name": "mod_muzzle",
           "_id": "6a05007a645960aa23fa771c",
           "_parent": "6a050039f8e3a6eee0fa771b",
           "_props": {
-            "filters":[
+            "filters": [
               {
                 "Shift": 0,
-                "Filter":[
+                "Filter": [
                   "5b3a16655acfc40016387a2a",
                   "5c7e5f112e221600106f4ede",
                   "5c0fafb6d174af02a96260ba",
@@ -320,7 +367,7 @@
           "_proto": "55d30c4c4bdc2db4468b457e"
         }
       ],
-      "Grids":[]
+      "Grids": []
     },
     "locales": {
       "en": {
@@ -335,7 +382,7 @@
     "addtoSpecialSlots": false,
     "addtoModSlots": false,
     "addtoStaticLootContainers": false,
-    "staticLootContainers":[],
+    "staticLootContainers": [],
     "addtoSecureFilters": false,
     "addtoTraders": false,
     "traders": {
@@ -374,7 +421,7 @@
       "HasShoulderContact": true,
       "Recoil": -35,
       "Slots": [],
-      "Grids":[]
+      "Grids": []
     },
     "locales": {
       "en": {
@@ -389,7 +436,7 @@
     "addtoSpecialSlots": false,
     "addtoModSlots": false,
     "addtoStaticLootContainers": false,
-    "staticLootContainers":[],
+    "staticLootContainers": [],
     "addtoSecureFilters": false,
     "addtoTraders": false,
     "traders": {
@@ -428,7 +475,7 @@
       "HasShoulderContact": true,
       "Recoil": -32,
       "Slots": [],
-      "Grids":[]
+      "Grids": []
     },
     "locales": {
       "en": {
@@ -443,7 +490,7 @@
     "addtoSpecialSlots": false,
     "addtoModSlots": false,
     "addtoStaticLootContainers": false,
-    "staticLootContainers":[],
+    "staticLootContainers": [],
     "addtoSecureFilters": false,
     "addtoTraders": false,
     "traders": {
@@ -479,7 +526,7 @@
       "Weight": 0.02,
       "MergesWithChildren": true,
       "Grids": [],
-      "Slots":[]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -494,8 +541,10 @@
     "addtoSpecialSlots": false,
     "addtoStaticLootContainers": false,
     "addtoModSlots": true,
-    "modSlot": ["mod_muzzle"],
-    "staticLootContainers":[],
+    "modSlot": [
+      "mod_muzzle"
+    ],
+    "staticLootContainers": [],
     "addtoSecureFilters": false,
     "addtoTraders": false,
     "traders": {
@@ -529,16 +578,16 @@
       "Height": 1,
       "Weight": 0.04,
       "Ergonomics": -1,
-      "Slots":[
+      "Slots": [
         {
           "_id": "6a0501b5fffeb2cb70fa7721",
           "_mergeSlotWithChildren": false,
           "_name": "mod_scope",
           "_parent": "6a05019ca48b70cedcfa7720",
           "_props": {
-            "filters":[
+            "filters": [
               {
-                "Filter":[
+                "Filter": [
                   "57ac965c24597706be5f975c",
                   "57aca93d2459771f2c7e26db",
                   "544a3f024bdc2d1d388b4568",
@@ -616,7 +665,7 @@
           "_required": false
         }
       ],
-      "Grids":[]
+      "Grids": []
     },
     "locales": {
       "en": {
@@ -672,16 +721,16 @@
       "CanPutIntoDuringTheRaid": true,
       "CanFast": true,
       "CheckTimeModifier": 0,
-      "Cartridges":[
+      "Cartridges": [
         {
           "_id": "6a0502aad07d5365a1fa7726",
           "_max_count": 10,
           "_name": "cartridges",
           "_parent": "6a05028e51f698d388fa7725",
           "_props": {
-            "filters":[
+            "filters": [
               {
-                "Filter":[
+                "Filter": [
                   "694c796b42ae52a1a940f8ba",
                   "694efa39da82e820e540f8da",
                   "694ef9c8bc499b141d40f8d7",
@@ -698,7 +747,7 @@
         }
       ],
       "Ergonomics": 2,
-      "Grids":[],
+      "Grids": [],
       "Height": 1,
       "LoadUnloadModifier": 15,
       "MergesWithChildren": true,
@@ -765,16 +814,16 @@
       "CanPutIntoDuringTheRaid": true,
       "CanFast": true,
       "CheckTimeModifier": 5,
-      "Cartridges":[
+      "Cartridges": [
         {
           "_id": "6a0502f79d79c5fc94fa772a",
           "_max_count": 25,
           "_name": "cartridges",
           "_parent": "6a0502f53ab1a759f9fa7729",
           "_props": {
-            "filters":[
+            "filters": [
               {
-                "Filter":[
+                "Filter": [
                   "694c796b42ae52a1a940f8ba",
                   "694efa39da82e820e540f8da",
                   "694ef9c8bc499b141d40f8d7",
@@ -791,7 +840,7 @@
         }
       ],
       "Ergonomics": -2,
-      "Grids":[],
+      "Grids": [],
       "Height": 2,
       "LoadUnloadModifier": 25,
       "MergesWithChildren": true,
@@ -800,8 +849,7 @@
       "Weight": 0.15,
       "VisibleAmmoRangesString": "1-2",
       "Width": 1,
-      "magAnimationIndex":1
-
+      "magAnimationIndex": 1
     },
     "locales": {
       "en": {
@@ -861,16 +909,16 @@
       "CanPutIntoDuringTheRaid": true,
       "CanFast": true,
       "CheckTimeModifier": 5,
-      "Cartridges":[
+      "Cartridges": [
         {
           "_id": "6a05035d7a192c6b2ffa772d",
           "_max_count": 25,
           "_name": "cartridges",
           "_parent": "6a05035f07e65273ddfa772e",
           "_props": {
-            "filters":[
+            "filters": [
               {
-                "Filter":[
+                "Filter": [
                   "694c796b42ae52a1a940f8ba",
                   "694efa39da82e820e540f8da",
                   "694ef9c8bc499b141d40f8d7",
@@ -887,7 +935,7 @@
         }
       ],
       "Ergonomics": -2,
-      "Grids":[],
+      "Grids": [],
       "Height": 2,
       "LoadUnloadModifier": 25,
       "MergesWithChildren": true,

@@ -13,6 +13,30 @@
                 }
             },
             {
+                "_id": "6613a105500af17a1ded4487",
+                "_tpl": "6a3ee36d7f4f2267b52ee1bd",
+                "parentId": "d8ba1ef9c909c061f0737984",
+                "slotId": "mod_barrel"
+            },
+            {
+                "_id": "2868d32b015e7e6a17269f77",
+                "_tpl": "6a3ee3c2f2b7441c862ee1c5",
+                "parentId": "d8ba1ef9c909c061f0737984",
+                "slotId": "mod_stock"
+            },
+            {
+                "_id": "0506df21d8b9a8dbabfd37fd",
+                "_tpl": "6a3ee3a1f2b7441c862ee1c3",
+                "parentId": "d8ba1ef9c909c061f0737984",
+                "slotId": "mod_charge"
+            },
+            {
+                "_id": "b1f34ecb8195422ae4f599c0",
+                "_tpl": "6a3ee211ef62af0e542ee1b1",
+                "parentId": "d8ba1ef9c909c061f0737984",
+                "slotId": "mod_magazine"
+            },
+            {
                 "_id": "361580ba2d22f9753378d222",
                 "_tpl": "6a3ee211ef62af0e542ee1b1",
                 "parentId": "hideout",

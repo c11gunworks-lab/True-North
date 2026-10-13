@@ -1,16 +1,22 @@
 ﻿{
-
   "6917bfb870f5e5d6aea8165d": {
     "itemTplToClone": "5a16b9fffcdbcb0176308b34",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/amparms.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/amparms.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
-      "Width": 1, "Height": 1, "Weight": 0.15,
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
       "BlocksEarpiece": true,
-      "ConflictingItems": ["66b5f6a28ca68c6461709ed8"],
+      "ConflictingItems": [
+        "66b5f6a28ca68c6461709ed8"
+      ],
       "Grids": [],
       "Slots": [
         {
@@ -28,7 +34,6 @@
                   "a01000000000000000000003",
                   "a01000000000000000000004"
                 ]
-
               }
             ]
           },
@@ -47,12 +52,11 @@
     "handbookPriceRoubles": 25000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_001"],
-
+    "modSlot": [
+      "mod_equipment_001"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -64,8 +68,30 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "808c34561595268d1e1f6abe",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ops-Core Amp Arms - AMP Black",
+        "_parent": "fee56a0badadfebb1a382e75",
+        "_items": [
+          {
+            "_id": "fee56a0badadfebb1a382e75",
+            "_tpl": "6917bfb870f5e5d6aea8165d"
+          },
+          {
+            "_id": "e02d7f9fb5f2a1e75add698a",
+            "_tpl": "a01000000000000000000001",
+            "parentId": "fee56a0badadfebb1a382e75",
+            "slotId": "mod_arms"
+          }
+        ],
+        "_encyclopedia": "6917bfb870f5e5d6aea8165d"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6917c15e481d9ff7ca561360": {
@@ -84,19 +110,24 @@
       }
     }
   },
-
   "6a0e13a9b1f1333de13052c8": {
     "itemTplToClone": "5a16b9fffcdbcb0176308b34",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/amparms-tan.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/amparms-tan.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
       "BlocksEarpiece": true,
-
-      "Width": 1, "Height": 1, "Weight": 0.15,
-      "ConflictingItems": ["66b5f6a28ca68c6461709ed8"],
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
+      "ConflictingItems": [
+        "66b5f6a28ca68c6461709ed8"
+      ],
       "Grids": [],
       "Slots": [
         {
@@ -114,7 +145,6 @@
                   "a01000000000000000000003",
                   "a01000000000000000000004"
                 ]
-
               }
             ]
           },
@@ -133,12 +163,11 @@
     "handbookPriceRoubles": 25000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_001"],
-
+    "modSlot": [
+      "mod_equipment_001"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -150,8 +179,36 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "0a707e5a7ace89757645cca9",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ops-Core Amp Arms Tan - AXL, ComTac V",
+        "_parent": "8f69238f77e1b1daa0062ffb",
+        "_items": [
+          {
+            "_id": "8f69238f77e1b1daa0062ffb",
+            "_tpl": "6a0e13a9b1f1333de13052c8"
+          },
+          {
+            "_id": "df52e09e5368d67e8df32d19",
+            "_tpl": "6917c1976cf46fb7b4ffd866",
+            "parentId": "8f69238f77e1b1daa0062ffb",
+            "slotId": "mod_arms"
+          },
+          {
+            "_id": "be83847574a8cfe393d97257",
+            "_tpl": "6917c23f71eb4b42ea95584b",
+            "parentId": "df52e09e5368d67e8df32d19",
+            "slotId": "mod_headset"
+          }
+        ],
+        "_encyclopedia": "6a0e13a9b1f1333de13052c8"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e13c44349de063a3052ca": {
@@ -170,19 +227,24 @@
       }
     }
   },
-
   "6a0e13c5113b24a5bc3052cb": {
     "itemTplToClone": "5a16b9fffcdbcb0176308b34",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/amparms-fg.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/amparms-fg.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
       "BlocksEarpiece": true,
-
-      "Width": 1, "Height": 1, "Weight": 0.15,
-      "ConflictingItems": ["66b5f6a28ca68c6461709ed8"],
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
+      "ConflictingItems": [
+        "66b5f6a28ca68c6461709ed8"
+      ],
       "Grids": [],
       "Slots": [
         {
@@ -200,7 +262,6 @@
                   "a01000000000000000000003",
                   "a01000000000000000000004"
                 ]
-
               }
             ]
           },
@@ -219,12 +280,11 @@
     "handbookPriceRoubles": 25000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_001"],
-
+    "modSlot": [
+      "mod_equipment_001"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -236,8 +296,30 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "a53fd9f42c9ba1062dcc584b",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ops-Core Amp Arms Foliage Green - AMP",
+        "_parent": "9bebccfeec6e48172309d3ba",
+        "_items": [
+          {
+            "_id": "9bebccfeec6e48172309d3ba",
+            "_tpl": "6a0e13c5113b24a5bc3052cb"
+          },
+          {
+            "_id": "5eb205db3e6343dcf772696c",
+            "_tpl": "a01000000000000000000002",
+            "parentId": "9bebccfeec6e48172309d3ba",
+            "slotId": "mod_arms"
+          }
+        ],
+        "_encyclopedia": "6a0e13c5113b24a5bc3052cb"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e13ce7778463c583052cd": {
@@ -256,19 +338,24 @@
       }
     }
   },
-
   "6a0e13e4d4c66b01c53052ce": {
     "itemTplToClone": "5a16b9fffcdbcb0176308b34",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/amparms-rg.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/amparms-rg.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
       "BlocksEarpiece": true,
-
-      "Width": 1, "Height": 1, "Weight": 0.15,
-      "ConflictingItems": ["66b5f6a28ca68c6461709ed8"],
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
+      "ConflictingItems": [
+        "66b5f6a28ca68c6461709ed8"
+      ],
       "Grids": [],
       "Slots": [
         {
@@ -286,7 +373,6 @@
                   "a01000000000000000000003",
                   "a01000000000000000000004"
                 ]
-
               }
             ]
           },
@@ -305,12 +391,11 @@
     "handbookPriceRoubles": 25000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_001"],
-
+    "modSlot": [
+      "mod_equipment_001"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -322,8 +407,30 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "ab1a056d59d1acb8b0ec2f66",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Ops-Core Amp Arms Ranger Green - AMP",
+        "_parent": "64cce557d8381d9f3062bca5",
+        "_items": [
+          {
+            "_id": "64cce557d8381d9f3062bca5",
+            "_tpl": "6a0e13e4d4c66b01c53052ce"
+          },
+          {
+            "_id": "155406e79463e815b3bf7567",
+            "_tpl": "a01000000000000000000003",
+            "parentId": "64cce557d8381d9f3062bca5",
+            "slotId": "mod_arms"
+          }
+        ],
+        "_encyclopedia": "6a0e13e4d4c66b01c53052ce"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e13f3034fe01a013052d0": {
@@ -348,32 +455,36 @@
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/twunity.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/twunity.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
-      "Width": 1, "Height": 1, "Weight": 0.05,
-
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.05,
       "Grids": [],
-      "Slots": [{
-        "_id": "693c598392cdd71b29645b56",
-        "_mergeSlotWithChildren": true,
-        "_name": "mod_amps",
-        "_parent": "693c59557af373b906645b54",
-        "_props": {
-          "filters": [
-            {
-              "Filter": [
-                "6917bfb870f5e5d6aea8165d",
-                "5a16b9fffcdbcb0176308b34",
-                "6a0e13a9b1f1333de13052c8",
-                "6a0e13c5113b24a5bc3052cb",
-                "6a0e13e4d4c66b01c53052ce"
-              ]
-
-            }
-          ]
-        },
-        "_required": false
-      }
+      "Slots": [
+        {
+          "_id": "693c598392cdd71b29645b56",
+          "_mergeSlotWithChildren": true,
+          "_name": "mod_amps",
+          "_parent": "693c59557af373b906645b54",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "6917bfb870f5e5d6aea8165d",
+                  "5a16b9fffcdbcb0176308b34",
+                  "6a0e13a9b1f1333de13052c8",
+                  "6a0e13c5113b24a5bc3052cb",
+                  "6a0e13e4d4c66b01c53052ce"
+                ]
+              }
+            ]
+          },
+          "_required": false
+        }
       ]
     },
     "locales": {
@@ -387,12 +498,11 @@
     "handbookPriceRoubles": 5000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_000"],
-
+    "modSlot": [
+      "mod_equipment_000"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -404,8 +514,42 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "66cb0563b9bb20b84e9761a2",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "Unity Tactical Amps Adapter - Amp Arms, AXL, Sordin",
+        "_parent": "1f0785dfad28cf141875ef9a",
+        "_items": [
+          {
+            "_id": "1f0785dfad28cf141875ef9a",
+            "_tpl": "693c59557af373b906645b54"
+          },
+          {
+            "_id": "4154006a32bd88381db321de",
+            "_tpl": "6917bfb870f5e5d6aea8165d",
+            "parentId": "1f0785dfad28cf141875ef9a",
+            "slotId": "mod_amps"
+          },
+          {
+            "_id": "fd8162254ee58fcfbb73f02e",
+            "_tpl": "6917c1976cf46fb7b4ffd866",
+            "parentId": "4154006a32bd88381db321de",
+            "slotId": "mod_arms"
+          },
+          {
+            "_id": "dee332b1a68b8d9c36dc010b",
+            "_tpl": "e01000000000000000000001",
+            "parentId": "fd8162254ee58fcfbb73f02e",
+            "slotId": "mod_headset"
+          }
+        ],
+        "_encyclopedia": "693c59557af373b906645b54"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "693c5ca5897a400b9e645b57": {
@@ -424,50 +568,52 @@
       }
     }
   },
-
   "6917c1976cf46fb7b4ffd866": {
     "itemTplToClone": "5a398ab9c4a282000c5a9842",
     "parentId": "55818b224bdc2dde698b456f",
     "handbookParentId": "5b47574386f77428ca22b32f",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/raclink.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/raclink.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
-      "Width": 1, "Height": 1, "Weight": 0.05,
-
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.05,
       "Grids": [],
-      "Slots": [{
-        "_id": "6917c1c304970d2ef15cd15d",
-        "_mergeSlotWithChildren": true,
-        "_name": "mod_headset",
-        "_parent": "6917c1976cf46fb7b4ffd866",
-        "_props": {
-          "filters": [
-            {
-              "Filter": [
-                "6917c23f71eb4b42ea95584b",
-                "6998e54173a6181d15f7a061",
-                "6998e57bc11d47d1b7f7a063",
-                "c06000000000000000000001",
-                "c06000000000000000000002",
-                "c06000000000000000000003",
-                "c06000000000000000000004",
-                "c04000000000000000000001",
-                "c04000000000000000000002",
-                "c04000000000000000000003",
-                "c04000000000000000000004",
-                "e01000000000000000000001",
-                "e01000000000000000000002",
-                "e01000000000000000000003",
-                "e01000000000000000000004"
-
-              ]
-
-            }
-          ]
-        },
-        "_required": true
-      }
+      "Slots": [
+        {
+          "_id": "6917c1c304970d2ef15cd15d",
+          "_mergeSlotWithChildren": true,
+          "_name": "mod_headset",
+          "_parent": "6917c1976cf46fb7b4ffd866",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "6917c23f71eb4b42ea95584b",
+                  "6998e54173a6181d15f7a061",
+                  "6998e57bc11d47d1b7f7a063",
+                  "c06000000000000000000001",
+                  "c06000000000000000000002",
+                  "c06000000000000000000003",
+                  "c06000000000000000000004",
+                  "c04000000000000000000001",
+                  "c04000000000000000000002",
+                  "c04000000000000000000003",
+                  "c04000000000000000000004",
+                  "e01000000000000000000001",
+                  "e01000000000000000000002",
+                  "e01000000000000000000003",
+                  "e01000000000000000000004"
+                ]
+              }
+            ]
+          },
+          "_required": true
+        }
       ]
     },
     "locales": {
@@ -481,11 +627,8 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": false,
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -497,8 +640,30 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "2121f0f19b96712388d460d6",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "AXL Advanced RAC Link - ComTac V",
+        "_parent": "eb0d1a87735cd80a13ad5aa1",
+        "_items": [
+          {
+            "_id": "eb0d1a87735cd80a13ad5aa1",
+            "_tpl": "6917c1976cf46fb7b4ffd866"
+          },
+          {
+            "_id": "962d9441800d3396a0c736c0",
+            "_tpl": "6917c23f71eb4b42ea95584b",
+            "parentId": "eb0d1a87735cd80a13ad5aa1",
+            "slotId": "mod_headset"
+          }
+        ],
+        "_encyclopedia": "6917c1976cf46fb7b4ffd866"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6917c21c2414844d3314648d": {
@@ -517,53 +682,53 @@
       }
     }
   },
-
   "6a0e1431ce75a53df33052d1": {
     "itemTplToClone": "5a16b9fffcdbcb0176308b34",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/headset-pic-adapter.bundle", "rcid": "" },
+      "Prefab": {
+        "path": "helmetmaster/headset-pic-adapter.bundle",
+        "rcid": ""
+      },
       "BackgroundColor": "blue",
       "BlocksEarpiece": true,
-
-      "Width": 1, "Height": 1, "Weight": 0.05,
-
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.05,
       "Grids": [],
-      "Slots": [{
-        "_id": "6a0e143f7a478318013052d2",
-        "_mergeSlotWithChildren": true,
-        "_name": "mod_headset_001",
-        "_parent": "6a0e1431ce75a53df33052d1",
-        "_props": {
-          "filters": [
-            {
-              "Filter": [
-                "6917c23f71eb4b42ea95584b",
-                "6998e54173a6181d15f7a061",
-                "6998e57bc11d47d1b7f7a063",
-                
-                "c06000000000000000000001",
-                "c06000000000000000000002",
-                "c06000000000000000000003",
-                "c06000000000000000000004",
-                "c04000000000000000000001",
-                "c04000000000000000000002",
-                "c04000000000000000000003",
-                "c04000000000000000000004",
-                "e01000000000000000000001",
-                "e01000000000000000000002",
-                "e01000000000000000000003",
-                "e01000000000000000000004"
-
-              ]
-
-            }
-          ]
-        },
-        "_required": true
-      }
+      "Slots": [
+        {
+          "_id": "6a0e143f7a478318013052d2",
+          "_mergeSlotWithChildren": true,
+          "_name": "mod_headset_001",
+          "_parent": "6a0e1431ce75a53df33052d1",
+          "_props": {
+            "filters": [
+              {
+                "Filter": [
+                  "6917c23f71eb4b42ea95584b",
+                  "6998e54173a6181d15f7a061",
+                  "6998e57bc11d47d1b7f7a063",
+                  "c06000000000000000000001",
+                  "c06000000000000000000002",
+                  "c06000000000000000000003",
+                  "c06000000000000000000004",
+                  "c04000000000000000000001",
+                  "c04000000000000000000002",
+                  "c04000000000000000000003",
+                  "c04000000000000000000004",
+                  "e01000000000000000000001",
+                  "e01000000000000000000002",
+                  "e01000000000000000000003",
+                  "e01000000000000000000004"
+                ]
+              }
+            ]
+          },
+          "_required": true
+        }
       ]
     },
     "locales": {
@@ -577,12 +742,11 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": true,
-    "modSlot": ["mod_equipment_001"],
-
+    "modSlot": [
+      "mod_equipment_001"
+    ],
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -594,8 +758,30 @@
       }
     ],
     "addtoSecureFilters": true,
+    "addWeaponPreset": true,
+    "weaponPresets": [
+      {
+        "_id": "1e091cca3d1857b11f0bb8bb",
+        "_type": "Preset",
+        "_changeWeaponName": false,
+        "_name": "3M Peltor Tactical Headset Adapter - ComTac IV",
+        "_parent": "a31e23db7cafd2b38a114630",
+        "_items": [
+          {
+            "_id": "a31e23db7cafd2b38a114630",
+            "_tpl": "6a0e1431ce75a53df33052d1"
+          },
+          {
+            "_id": "d17085a0245d26a0204b4d92",
+            "_tpl": "c04000000000000000000001",
+            "parentId": "a31e23db7cafd2b38a114630",
+            "slotId": "mod_headset_001"
+          }
+        ],
+        "_encyclopedia": "6a0e1431ce75a53df33052d1"
+      }
+    ],
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e1465749fb508a13052d3": {
@@ -614,15 +800,15 @@
       }
     }
   },
-
-
   "6a0e253fd13347b5a6305306": {
     "itemTplToClone": "572b7d8524597762b472f9d1",
     "parentId": "5645bcb74bdc2ded0b8b4578",
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
-      "Prefab": { "path": "helmetmaster/headband-peltor.bundle", "rcid": "" },
-            
+      "Prefab": {
+        "path": "helmetmaster/headband-peltor.bundle",
+        "rcid": ""
+      },
       "BlocksEarpiece": false,
       "BlocksEyewear": false,
       "BlocksFaceCover": false,
@@ -630,7 +816,6 @@
       "CanPutIntoDuringTheRaid": true,
       "CanRequireOnRagfair": false,
       "CanSellOnRagfair": true,
-      
       "Slots": [
         {
           "_id": "6a0e25419e462e02ec305307",
@@ -703,13 +888,11 @@
     "addtoBots": true,
     "addtoSpecialSlots": false,
     "addtoInventorySlots": [
-"Earpiece"
+      "Earpiece"
     ],
     "addtoModSlots": false,
     "modSlot": [],
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -746,13 +929,11 @@
             "parentId": "6a889c2f7ec503d8b7974e2b",
             "slotId": "mod_band"
           }
-
         ],
         "_encyclopedia": "6a0e253fd13347b5a6305306"
       }
     ],
     "addtoTraders": false,
-
     "traders": {
       "RAGMAN": {
         "6a0e2510e5614b03db305304": {
@@ -777,13 +958,15 @@
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/headset-pad-rubber.bundle", "rcid": "" },
-      "Width": 1, "Height": 1, "Weight": 0.15,
-
+      "Prefab": {
+        "path": "helmetmaster/headset-pad-rubber.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
       "Grids": [],
-      "Slots": [
-
-      ]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -796,12 +979,9 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": false,
     "modSlot": [],
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -814,7 +994,6 @@
     ],
     "addtoSecureFilters": true,
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e25b2e0c072325b305309": {
@@ -839,13 +1018,15 @@
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/headset-pad-camo.bundle", "rcid": "" },
-      "Width": 1, "Height": 1, "Weight": 0.15,
-
+      "Prefab": {
+        "path": "helmetmaster/headset-pad-camo.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
       "Grids": [],
-      "Slots": [
-
-      ]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -858,12 +1039,9 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": false,
     "modSlot": [],
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -876,7 +1054,6 @@
     ],
     "addtoSecureFilters": true,
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e2603caf1ca041730530b": {
@@ -901,13 +1078,15 @@
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/headset-pad-camo-fleck.bundle", "rcid": "" },
-      "Width": 1, "Height": 1, "Weight": 0.15,
-
+      "Prefab": {
+        "path": "helmetmaster/headset-pad-camo-fleck.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
       "Grids": [],
-      "Slots": [
-
-      ]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -920,12 +1099,9 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": false,
     "modSlot": [],
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -938,7 +1114,6 @@
     ],
     "addtoSecureFilters": true,
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e43500f2c2e888d30530f": {
@@ -963,13 +1138,15 @@
     "handbookParentId": "5b5f6f3c86f774094242ef87",
     "overrideProperties": {
       "ExaminedByDefault": true,
-      "Prefab": { "path": "helmetmaster/headset-pad-camo-abu.bundle", "rcid": "" },
-      "Width": 1, "Height": 1, "Weight": 0.15,
-
+      "Prefab": {
+        "path": "helmetmaster/headset-pad-camo-abu.bundle",
+        "rcid": ""
+      },
+      "Width": 1,
+      "Height": 1,
+      "Weight": 0.15,
       "Grids": [],
-      "Slots": [
-
-      ]
+      "Slots": []
     },
     "locales": {
       "en": {
@@ -982,12 +1159,9 @@
     "handbookPriceRoubles": 35000,
     "addtoBots": false,
     "addtoSpecialSlots": false,
-
     "addtoModSlots": false,
     "modSlot": [],
-
     "addtoStaticLootContainers": true,
-
     "staticLootContainers": [
       {
         "containerName": "LOOTCONTAINER_PMC_BODY",
@@ -1000,7 +1174,6 @@
     ],
     "addtoSecureFilters": true,
     "addtoTraders": true,
-
     "traders": {
       "RAGMAN": {
         "6a0e4340d380af2f8430530d": {

@@ -50,7 +50,7 @@
                     },
                     "ergonomics": {
                         "compareMethod": ">=",
-                        "value": 65
+                        "value": 55
                     },
                     "hasItemFromCategory": [],
                     "height": {
@@ -67,7 +67,7 @@
                     },
                     "recoil": {
                         "compareMethod": "<=",
-                        "value": 180
+                        "value": 280
                     },
                     "target": [
                         "5a367e5dc4a282000e49738f",
